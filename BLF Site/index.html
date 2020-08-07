@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Welcome to The Blackett Lab Family </title>
+    <link rel="icon" href="images/Logo Icon 2.png">
+
+     <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/bd9aebcf2a.js" crossorigin="anonymous"></script>
+    
+    <!-- Animate on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <!-- Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <script src="action.js"></script>
+</head>
+<body>
+    <section class="white-section" id="title">
+    <div class="container-fluid"> 
+        <nav class="navbar navbar-expand-lg navbar-light">
+            
+            <a href="index.html"><img class="navbar-brand navbar-img" src="images/Logo Icon 2.png" alt="Brand Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#title">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="#mission">Mission</a>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#cta">Contact</a>
+                </li>
+            </ul>
+         </div>
+        </nav>
+    </div>
+
+    <div class="container-fluid">
+            
+    <div class="title-row row">
+    
+        <div class="col-lg-8">
+                
+            <div class="fade-in title-txt">
+            <h1 class="title-name">
+                 The Blackett <br> Lab Family
+            </h1>
+            </div>
+
+            <div class="title-txt">
+                <h2 class="fade-in title-description">
+                    A collective of UK based Black physicists
+                </h2>
+            </div>
+        </div>
+
+        <div id="homecarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="images/Yolanda Image.jpg" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/Original Member Photo NB.jpeg" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/Mark Photo.jpg" alt="Third slide">
+              </div>
+            </div>
+          </div>
+
+        <div class="col-lg-4">
+
+            <img class="title-img title-img1" src="images/Yolanda Image.jpg" alt="Group photo 2">
+            <img class="title-img title-img2" src="images/Original Member Photo NB.jpeg" alt="Group photo 1">
+            <img class="title-img title-img3" src="images/Mark Photo.jpg" alt="Group photo 3">
+
+        </div>
+
+    </div>
+</div>
+</section>
+
+<section class="black-section" id=about>
+
+        <div class="container-fluid">
+            <h2 class="heading"> About Us </h2>
+            <p class="about-text">
+                 We are a social enterprise made up of people from a variety of professions and specialisms all over the country, who share a passion for physics and positive representations of the Black community.                
+            </p>
+        <span id=readmore>
+        <p class="about-text about-text-more">
+                Our story began in 2006 at the world-renowned Blackett Laboratory – the physics department at Imperial College London. Dr Mark Richards, an eminent physicist and senior teaching fellow there, decided to take on two Black students as their academic and social mentor. 
+        </p>
+        <p class="about-text about-text-more">
+        Very much a tiny fraction of the student and staff body, what began as three ‘Blackett Brothers’ would soon grow to become: <br> The Blackett Lab Family.
+    </p>        
+    <p class="about-text about-text-more">
+        Today, we are a growing national collective of talented, successful and influential people making waves in education, research, industry, technology, finance and law.
+                        </p>
+                    </span>
+            
+    <button class="btn btn-lg btn-outline-light" onclick="myFunction()" id="MoreBtn">Read More <i class="fas fa-chevron-down"></i></button>
+    <button class="btn btn-lg btn-outline-light" onclick="myFunction()" id="LessBtn">Read Less <i class="fas fa-chevron-up"></i></button>
+
+                    </div>
+
+
+    <div class="container-fluid">
+        <h2 class="meet-the-team heading">
+            Meet the Team
+        </h2>
+    </div>
+
+    <div class="container-fluid">
+    <div class="first-row row">
+        
+            <div class="img-div col-md-6" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+                    <img class="team-img" src="images/Mark 3.jpg" alt="Mark">
+                    <p class="team-job"> Senior Lecturer </p>
+                    <p class="team-name">
+                            Mark Richards
+                        </p>
+                        <p class="team-role">  Chair of the Committee </p>
+
+                    </div>
+            
+
+            <div class="img-div col-md-6" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+                    <img class="team-img" src="images/Jon.jpg" alt="Jon">
+                    <p class="team-job"> Assistant Headteacher </p>
+                    <p class="team-name">
+                        Jon Gordon </p>
+                        <p class="team-role"> Overall Strategic Lead 
+                    </p>
+                </p>
+                </div>
+        
+
+    </div>
+
+    <div class="second-row row">
+            <div class="img-div  col-md-4" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+                    <img class="team-img" src="images/Sophie.jpg" alt="Sophie">
+                    <p class="team-job"> PhD Student </p>
+                    <p class="team-name">
+                        Sophie Martin 
+                    </p>
+                    <p class="team-role"> Media & Communiciations Strategic Lead  </p>
+
+            </div>
+
+                <div class="img-div col-md-4" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+                        <img class="team-img" src="images/Benyam.jpg" alt="Benyam">
+                        <p class="team-job">MSci Physics Student </p>
+                        <p class="team-name">
+                            Benyam Dejen </p>
+                            <p class="team-role"> Outreach Strategic Lead                        </p>
+                </div>
+            
+                
+                    <div class="img-div col-md-4" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true">
+                            <img class="team-img" src="images/Ose.jpg" alt="Ose">
+                            <p class="team-job"> Computer Scientist </p>
+                            <p class="team-name">
+                                Ose Pedro </p>
+                                <p class="team-role"> Community Strategic Lead  </p>
+                    </div>
+                
+
+    </div>
+</div>
+
+</section>
+
+
+<section class="white-section" id="mission">
+
+    <div class="mission-div container-fluid">
+        <h2 class="heading">Our Mission</h2>
+        <p class=" mission-title subheading">
+        
+    Diversifying perceptions of physics and addressing Black underrepresentation at all levels in the field </p>
+        <p class="mission-title subheading"> We aim to
+        </p>
+        
+    
+        <div class="mission-box container-fluid">
+                <div>
+                    <i class="mission-icon fas fa-5x fa-users"></i> 
+                    <p class=" mission-aim" data-aos="fade-right" data-aos-duration="2000" data-aos-once="true">
+                    Represent
+                    </p>
+                    <p>
+                    We highlight, celebrate, and give voice to an underrepresented group of Black individuals qualified in or engaging with physics
+                </p>
+                </div>
+        </div>
+
+        <div class="mission-box container-fluid">
+                <div>
+                    <i class="mission-icon fab fa-5x fa-connectdevelop"></i> 
+                    <p class="mission-aim" data-aos="fade-right" data-aos-duration="2000" data-aos-once="true">
+                    Connect
+                    </p>
+                    <p>
+                        We connect UK based Black physicists to each other to form a community of talent and knowledge, and share this passion with the world
+                    </p>
+                </div>
+        </div>
+
+    <div class="mission-box-bottom mission-box container-fluid">
+            <div>
+                    <i class="mission-icon far fa-5x fa-lightbulb"></i>      
+                <p class="mission-aim" data-aos="fade-right" data-aos-duration="2000" data-aos-once="true">
+                Inspire
+                </p>
+                <p >
+                We inspire ourselves and others – regardless of gender, ethnicity, orientation, ability, or background – but especially the future generation of UK based Black physicists
+                </p>
+            </div>
+    </div>
+    
+    </div>
+
+    <div class="mission-div container-fluid">
+        <h2 class=" objectives-title mission-title subheading"> Our long-term objectives are to 
+        </h2> 
+    </div>
+
+    <div class="objective-deck card-deck container-fluid ">
+            <div class="objective-card card">
+                    <i class="objective-icon fas fa-chart-line fa-4x"></i>
+              <div class="card-body">
+                <p class="card-text"> Increase the number of Black UK domiciled students enrolled onto a physics or physics-related course or scheme                    </p>
+              </div>
+            </div>
+            <div class="objective-card card">
+                    <i class="objective-icon fas fa-globe fa-4x "></i>
+                <div class="card-body">
+                <p class="card-text">Set up a network of support, mentorship, and opportunities for past, current, and future UK based Black physicists</p>
+              </div>
+            </div>
+            <div class="objective-card card">
+                    <i class="objective-icon far fa-eye fa-4x"></i>
+                <div class="card-body">
+                <p class="card-text">Raise the knowledge, awareness and appreciation of physics in the Black community </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+           
+    </div>
+    </section>
+
+    
+<section class="black-section" id="gallery">
+    <div class="container-fluid">
+            <h2 class="gallery-heading heading"> Gallery </h2>
+
+    </div>
+
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="7000">
+                <div class="carousel-inner">
+                  <div class="testimonial-div carousel-item active container-fluid">
+                      <h3 class="testimonial-text">   <img class="speech-icon" src="images/quote 2.png" alt="img">
+                         I've never ever in my whole life seen a Black female physicist, it really makes me happy to see this especially because I'm planning to become a physicist and work in research. </h3>
+                      <em>Elsie, Year 13</em>
+                  </div>
+                  
+                  <div class="testimonial-div carousel-item container-fluid">
+                  <h2 class="testimonial-text"> I stumbled across this page recently and would love to get involved. I am the only Black PhD student at my university.  <img class="speech-icon-flip" src="images/quote 2.png" alt="img"> </h2>
+                  <em> Estifa'a, PhD Student </em>
+                    </div>
+
+                <div class="testimonial-div carousel-item container-fluid">
+                    <h3 class="testimonial-text">   <img class="speech-icon" src="images/quote 2.png" alt="img">
+                        I watched your R.O.U.T.E.S. Live session on Instagram on "Why are there so few Black physicists?" and thought it was brilliant. So many of our kids do not go into science, let alone physics! </h3>
+                    <em>Denise, CEO of Reach Out 2 Kids </em>
+                </div>
+
+                <div class="testimonial-div carousel-item container-fluid">
+                    <h2 class="testimonial-text"> I often think about the importance of being a good representative of a Black british PhD student even though I didn't have the most positive experience myself. <img class="speech-icon-flip" src="images/quote 2.png" alt="img"> </h2>
+                    <em> Monifa, PhD Student </em>
+                      </div>
+  
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+    <div class="container-fluid">
+        <p class="find-us subheading"> Find us making waves on Instagram </p>
+        <a href="https://www.instagram.com/blackettlabfam/" target="_blank"><button class="btn-space btn btn-outline-light btn-lg" type="button"> <i class="fab fa-instagram"></i> @blackettlabfam </button></a>
+
+    </div>
+    <div class="gallery-div container-fluid">
+        <div class="row">
+            <div data-aos="fade-down" data-aos-duration="2000" data-aos-once="true" class="col-6  col-lg-3">
+            <a href="https://www.instagram.com/p/CBYsiLMpyLp/" target="_blank"><img class="gallery-img" src="images/Fact.png" alt="Facts">
+            </a>
+            </div>
+        
+            <div data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" class="col-6  col-lg-3">
+            <a href="https://www.instagram.com/p/CC83svOJr56/" target="_blank"><img class="gallery-img" src="images/Map.jpeg" alt="Map">
+            </a>
+            </div>
+
+            <div data-aos="fade-down" data-aos-duration="2000" data-aos-once="true" class="col-6  col-lg-3">
+            <a href="https://www.instagram.com/p/CAs0RmxJFkj/" target="_blank"><img class="gallery-img" src="images/R.O.U.T.E.S. Topic 1.png" alt="ROUTES">
+            </a>
+            </div>
+
+            <div data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" class="col-6 col-lg-3">
+                <a href="https://www.instagram.com/p/CAV31Y6HehN/" target="_blank"> <img class="gallery-img" src="images/Kathryn.png" alt="Kathryn">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+
+<section class="white-section" id="cta">
+
+    <div class="container-fluid">
+        <h2 class="heading"> Get in touch </h2>
+    </div>
+    
+
+    <div class="contact-div container-fluid">
+        <div class="row">
+            <div class="join-div col-lg-6">
+                <p class="cta-text">
+                    Are you UK based, of Black heritage and studying/studied a physics-related course? <br>
+                    <p class="cta-subtext">Join our community using the button below</p> 
+                </p>
+                <a href="mailto:connect@theblackettlabfamily.com?subject=Join Request"> <button class="btn btn-outline-dark btn-lg" type="button"> <i class="contact-icon fas fa-user-plus"></i> Join Us </button></a>
+            </div>
+            <div class="col-lg-6">
+                    <p class="cta-text">
+                            For general enquires, partnerships, or collaborations, please email us at: <br>
+                            <p class="cta-subtext"> connect@theblackettlabfamily.com</p> 
+                        </p>
+                <a href="mailto:connect@theblackettlabfamily.com?subject=General Enquiry"><button class="btn btn-outline-dark btn-lg" type="button"> <i class="contact-icon fas fa-envelope"></i> Contact Us </button></a>
+            </div>
+        </div>
+    </div>
+
+
+<footer id="footer">
+    <div class="container-fluid">
+    <a href="https://twitter.com/blackettlabfam" target="_blank"><i class="footer-icon fab fa-twitter"></i></a>
+    <a href="https://www.instagram.com/blackettlabfam/" target="_blank"><i class="footer-icon fab fa-instagram"></i></a>
+
+    <p class="footer-txt">© Copyright 2020 The Blackett Lab Family </p>
+    <p class="footer-txt"> All Rights Reserved. </p>
+  </div>
+  </footer>
+</section>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
