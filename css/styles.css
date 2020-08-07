@@ -421,7 +421,7 @@ video {
 /* Tablets */
 @media (max-width: 989px){
 
-    #title{
+    #title #cta{
         background-size: 150%;
 
     }
