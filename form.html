@@ -34,13 +34,13 @@
 </head>
 <body>
     <section class="white-section" id="title">
-    <div class="container-fluid"> 
+    <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light">
         <a href="index.html"><img class="navbar-brand navbar-img" src="images/Logo Icon 2.png" alt="Brand Logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -65,13 +65,13 @@
 
 
     <div class="container-fluid intro">
-        <h2 class="heading form-title"> 
+        <h2 class="heading form-title">
         Join Us!
         </h2>
         <h2 class="form-subtitle">
             The Blackett Lab Family provides a space for UK based Black physicists to connect with each other. We act as an online community of support, interaction, and fun, and encourage members to get involved with lots of social, educational, and professional opportunities. Our primary platform to connect with each other is Facebook, though you can engage with us on Instagram<a href="https://www.instagram.com/blackettlabfam/" target="_blank"><i class="footer-icon fab fa-instagram"></i></a> and Twitter<a href="https://twitter.com/blackettlabfam" target="_blank"><i class="footer-icon fab fa-twitter"></i></a>, too.
             <br><br>
-            The purpose of this short questionnaire is for you to introduce yourself to us, and for us to get to know you a bit more. If you have any questions about the questionnaire, feel free to contact us at <a class="hyperlink" href="mailto:connect@theblackettlabfamily.com">connect@theblackettlabfamily.com</a>  
+            The purpose of this short questionnaire is for you to introduce yourself to us, and for us to get to know you a bit more. If you have any questions about the questionnaire, feel free to contact us at <a class="hyperlink" href="mailto:connect@theblackettlabfamily.com">connect@theblackettlabfamily.com</a>
         </h2>
     </div>
 
@@ -79,15 +79,15 @@
         <form id="inductionform" name="inductionform">
         <div class="form-group required form-row">
             <div class="form-label required col-sm-5">
-                <label class="control-label" for="fname">Your name </label>
+                <label class="control-label" for="fname">Your name</label>
                 <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" required>
             </div>
             <div class="col-sm-7">
                 <label for="lname">  <br> </label>
-                <input type="text" class="form-control" id="lname" name="lname"  placeholder="Last name" required>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name" required>
             </div>
         </div>
-        
+
         <div class="form-group form-row">
             <div class="form-label col">
                 <input type="text" class="form-control" id="fbname" name="fbname"  placeholder="Facebook account name">
@@ -101,16 +101,16 @@
                 <label class="control-label" for="ukbased">Are you based in the UK? </label>
                 <select  class="form-control" name="ukbased" id="ukbased" required>
                 <option selected disabled value="">Select option...</option>
-                <option value="Yes">Yes, I am currently based in the UK </option>
-                <option value="No 1">No, but I have a strong connection to the UK (e.g. by birth or work/education) </option>
-                <option value="No  2">No, I am not currently based in the UK </option>
+                <option value="Yes-based">Yes, I am currently based in the UK </option>
+                <option value="No-connected">No, but I have a strong connection to the UK (e.g. by birth or work/education) </option>
+                <option value="No">No, I am not currently based in the UK </option>
 
                 </select>
             </div>
 
             <div class="form-label required col-md-6">
                 <label class="control-label" for="blackheritage" >Do you identify as having Black heritage? </label>
-                <select class="form-control" name="blackheritage" id="blackheritage" required>
+                <select class="form-control" name="blackheritage" id="blackheritage" value="Yes" required>
                 <option selected disabled value="">Select option...</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -120,7 +120,7 @@
 
         <div class="form-group form-label required">
             <label class="control-label" for="blackheritage">Do you have, or are you working towards, at least one year of post-16 physics-related experience? </label>
-            <select class="form-control" name="physicsqual" id="physicsqual" required>
+            <select class="form-control" name="physicsqual" id="physicsqual" value="Yes" required>
             <option selected disabled value="">Select option...</option>
             <option value="Yes">Yes</option>
             <option value="No">No</option>
@@ -129,13 +129,13 @@
         </div>
 
 
-        <div class="form-group form-label required">
+        <div class="form-group form-label">
             <label class="control-label" for="interests"> To help us shape the dynamic of our network, please let us know what you hope to get out of joining us
             </label>
-            <textarea class="form-control" rows="3" name="interests" id="interests" required=True></textarea>
+            <textarea class="form-control" rows="3" name="interests" id="interests"></textarea>
         </div>
 
-        
+
 
         <div class="form-group">
             <p class="data-promise">
@@ -153,7 +153,7 @@
             <div id="recaptcha" class="g-recaptcha brochure__form__captcha" data-sitekey="6LdOO8YZAAAAABSjkMHBBweHky9EmoRNKHEoUOFj"></div>
             </label>
         </div>
-    
+
         <button type="submit" id="submit-form" name="submit-form" class="btn btn-outline-dark"> <i class="contact-icon fas fa-paper-plane"></i> Submit</button>
         </form>
     </div>
@@ -162,14 +162,14 @@
         <div class="container-fluid">
         <a href="https://twitter.com/blackettlabfam" target="_blank"><i class="footer-icon fab fa-twitter"></i></a>
         <a href="https://www.instagram.com/blackettlabfam/" target="_blank"><i class="footer-icon fab fa-instagram"></i></a>
-    
+
         <p class="footer-txt">© Copyright 2020 The Blackett Lab Family </p>
         <p class="footer-txt"> All Rights Reserved. </p>
         </div>
     </footer>
-              
+
     </section>
-    
+
 </body>
 
 <!--  Form JavaScript -->
@@ -178,21 +178,26 @@
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxVEA9ftoq1bst8mr-dK5gp8u3-ztCXWN6NNYloXSgYSWesw6VE/exec'
 const form = document.forms['inductionform']
 
+var submissionCount=0;
+
+function submissionHandler() {
+  var t0 = performance.now()
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => {
+    ++submissionCount;
+    console.log('Success!' + submissionCount, response);
+    var t1 =performance.now();
+    console.log("Time taken" + (t1-t0) + "ms");
+    if(submissionCount<50) {submissionHandler();}
+  })
+  .catch(error => console.error('Error!', error.message));
+}
+
 form.addEventListener('submit', e => {
-e.preventDefault()
-
-var i;
-for (i = 0; i < 50; i++){
-
-    var t0 = performance.now()
-
-fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => {console.log('Success!' + i, response) 
-    var t1 =performance.now()
-    console.log("Time taken" + (t1-t0) + "ms")
-    setTimeout( () => {console.log("Waiting")}, 20000 )})
-    .catch(error => console.error('Error!', error.message))
-}})
+  e.preventDefault();
+  submissionHandler();
+});
 
 </script>
 

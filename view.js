@@ -11,7 +11,7 @@ function getQueryParameter(variable) {
     }
     return (false);
   }
-  
+
   function redirect() {
 
   // Capture the `ukbased` query parameter from the URL.
@@ -20,7 +20,7 @@ function getQueryParameter(variable) {
   var physicsqual = getQueryParameter('physicsquals')
 
 
-  if(ukbased == 'No 3' || blackheritage == 'No' || physicsqual == 'No' ) {
+  if(ukbased == 'No' || blackheritage == 'No' || physicsqual == 'No' ) {
     window.location.href = 'redirect.html';
 
   } else {
