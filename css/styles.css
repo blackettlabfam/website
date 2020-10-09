@@ -390,23 +390,6 @@ video {
     transform: translate(-50%, -50%);
   } */
 
-  /* Form */
-
-  #form{
-      padding: 0% 15%;
-  }
-
-  .form-subheading{
-      margin-bottom: 5rem;
-  }
-
-  .input-label{
-      margin-right: 10px;
-      font-weight: 100;
-  }
-  .input-box{
-      margin: 15px 0;
-  }
 
   /* Animations */
   .fade-in {
@@ -485,6 +468,7 @@ video {
         font-size: 1.2rem;
         margin: 0 7%;
     }
+
 }
   
 /* Mobile */
@@ -566,6 +550,7 @@ video {
     .cta-text{
         font-size: 1rem;
     }
+
 }
   
   @keyframes fadeIn{
@@ -613,3 +598,128 @@ video {
     }
   }
   
+
+ /* ---------------------------- */
+
+  /* Form.html */
+
+
+  #form{
+    padding: 0% 15%;
+}
+
+.intro{
+    padding: 2% 15%;
+}
+
+.form-title{
+    line-height: 3rem;
+    margin-top: 1rem;
+}
+
+.form-subtitle{
+    font-size: 1.2rem;
+    line-height: 2rem;
+    padding: 0 5% 2% 5%;
+}
+
+.form-label{
+    text-align: left;
+}
+.form-div{
+   padding: 0 15%; 
+}
+
+.form-group{
+    padding: 0% 5%;
+    margin-bottom: 2rem;
+
+}
+
+.form-label.required .control-label:after{
+    content:"*";color:#fca311;
+}
+
+.form-check-label{
+    font-size: 0.8rem;
+}
+
+.data-promise{
+    font-size: 1rem;
+    margin: 2.5rem 0 1.5rem 0;
+}
+
+.hyperlink{
+    color: #3d3d3d;
+}
+
+
+.hyperlink:hover{
+    color: #fca311;
+}
+
+
+
+
+@media (max-width: 989px){
+
+
+    /* Form css */
+
+
+    .form-title{
+        font-size: 3rem;
+        line-height: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .form-subtitle{
+        font-size: 1rem;
+        line-height: 1.5rem;
+        padding: 0 0.8% 2rem 0.8%;
+    }
+
+    .control-label{
+        font-size: 1rem;
+    }
+    .data-promise{
+        font-size: 1rem;
+        line-height: 1.5rem;
+
+    }
+
+    .btn{
+        font-size: 0.8rem;
+        
+    }
+
+    .form-control{
+        font-size: 80%;
+    }
+}
+
+
+@media (max-width: 414px){
+
+    .form-title{
+        font-size: 2rem;
+        margin-bottom: 2rem;
+
+    }
+
+    #recaptcha{
+        transform:scale(0.7);
+        -webkit-transform:scale(0.7);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+
+    .form-group{
+        margin-bottom: 1rem;
+    }
+    .recaptcha-label{
+        display:block;
+        padding: 0 0;
+    }
+
+}
