@@ -370,6 +370,7 @@ background-color: transparent;
     margin-top: 10px;
 }
 
+
 /* 
 
 Archived code
@@ -723,3 +724,70 @@ video {
     }
 
 }
+
+
+/*  Redirect pages CSS */
+/* #loader {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.75) url('../images/6.gif') no-repeat center center;
+    z-index: 10000;
+  }  */
+
+#loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #fca311; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.8;
+    z-index: 10000;
+    position: fixed;
+    display: none;
+  }
+
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Redirect page */
+
+  .redirect{
+      margin-bottom: 5%;
+        padding: 2% 15%;
+    
+  }
+
+  .redirect-link{
+      font-size: 0.8rem;
+  }
+
+  ul{
+      list-style: inside;
+      list-style-type: square;
+  }
+  .redirect-list{
+    padding: 0 0;
+  }
+
+  .redirect-links{
+      margin: 5% 0;
+  }
+
+  .list-item{
+      margin: 2% auto;
+  }

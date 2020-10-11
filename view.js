@@ -19,11 +19,11 @@ function getQueryParameter(variable) {
   var blackheritage = getQueryParameter('blackheritage')
   var physicsqual = getQueryParameter('physicsquals')
 
-
-  if(ukbased == 'No' || blackheritage == 'No' || physicsqual == 'No' ) {
+ if(ukbased == 'No' || blackheritage == 'No' || physicsqual == 'No' ) {
     window.location.href = 'redirect.html';
 
   } else {
+
     window.location.href = 'welcome.html';
 
   }

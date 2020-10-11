@@ -17,14 +17,14 @@
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/bd9aebcf2a.js" crossorigin="anonymous"></script>
 
-<!-- Animate on Scroll -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-
 <!-- Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+<!-- Animate on Scroll -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <!--- reCAPTCHA-->
 <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -65,11 +65,11 @@
 
 
     <div class="container-fluid intro">
-        <h2 class="heading form-title">
+        <h2 class="fade-in  heading form-title">
         Join Us!
         </h2>
         <h2 class="form-subtitle">
-            The Blackett Lab Family provides a space for UK based Black physicists to connect with each other. We act as an online community of support, interaction, and fun, and encourage members to get involved with lots of social, educational, and professional opportunities. Our primary platform to connect with each other is Facebook, though you can engage with us on Instagram<a href="https://www.instagram.com/blackettlabfam/" target="_blank"><i class="footer-icon fab fa-instagram"></i></a> and Twitter<a href="https://twitter.com/blackettlabfam" target="_blank"><i class="footer-icon fab fa-twitter"></i></a>, too.
+            The Blackett Lab Family provides a space for UK based Black physicists to connect with each other. We act as an online community of support, interaction, and fun, and encourage members to get involved with lots of social, educational, and professional opportunities. Our primary platform to connect with each other is Facebook, though you can engage with us on Instagram<a href="https://www.instagram.com/blackettlabfam/" target="_blank"><i class="footer-icon fab fa-instagram"></i></a> and Twitter<a href="https://twitter.com/blackettlabfam" target="_blank"><i class="footer-icon fab fa-twitter"></i></a> too.
             <br><br>
             The purpose of this short questionnaire is for you to introduce yourself to us, and for us to get to know you a bit more. If you have any questions about the questionnaire, feel free to contact us at <a class="hyperlink" href="mailto:connect@theblackettlabfamily.com">connect@theblackettlabfamily.com</a>
         </h2>
@@ -170,6 +170,8 @@
 
     </section>
 
+    <div id="loader"></div>
+
 </body>
 
 <!--  Form JavaScript -->
@@ -179,24 +181,51 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbxVEA9ftoq1bst8mr-dK5
 const form = document.forms['inductionform']
 
 var submissionCount=0;
+var spinner = $('#loader');
 
 function submissionHandler() {
-  var t0 = performance.now()
+    var t0 = performance.now()
 
-  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-  .then(response => {
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    .then(response => {
     ++submissionCount;
-    console.log('Success!' + submissionCount, response);
+    // console.log('Success!' + submissionCount, response);
     var t1 =performance.now();
-    console.log("Time taken" + (t1-t0) + "ms");
-    if(submissionCount<50) {submissionHandler();}
-  })
+    if (t1-t0 > 2000 ) {
+    console.log("Time taken" + (t1-t0) + "ms" + "Count" + submissionCount)};
+    if(submissionCount<100) {submissionHandler();}
+   })
   .catch(error => console.error('Error!', error.message));
 }
 
+function redirectUser() {
+
+    spinner.show();
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => {
+            if (response.ok) {
+                spinner.hide();
+                console.log('Success!', response);
+                redirect(); 
+            }
+
+            else{
+                throw new Error('Submission failed');
+                ++submissionCount;
+                
+            }
+        
+    } )
+    .catch(error => console.error('Error!', error.message));
+
+}
+
 form.addEventListener('submit', e => {
-  e.preventDefault();
-  submissionHandler();
+    e.preventDefault();
+    document.querySelector('#submit-form').disabled = true;
+    redirectUser();
+
+  
 });
 
 </script>
