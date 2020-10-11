@@ -206,15 +206,15 @@ function redirectUser() {
             if (response.ok) {
                 spinner.hide();
                 console.log('Success!', response);
-                redirect(); 
+                redirect(form); 
             }
 
             else{
                 throw new Error('Submission failed');
                 ++submissionCount;
-                
+
             }
-        
+
     } )
     .catch(error => console.error('Error!', error.message));
 
@@ -225,7 +225,7 @@ form.addEventListener('submit', e => {
     document.querySelector('#submit-form').disabled = true;
     redirectUser();
 
-  
+
 });
 
 </script>
