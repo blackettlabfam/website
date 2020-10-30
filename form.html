@@ -199,6 +199,17 @@ function submissionHandler() {
   .catch(error => console.error('Error!', error.message));
 }
 
+function errorHandler(submissionNo){
+
+if (submissionNo < 2 ){
+  alert("Submission failed, please try again.");
+}
+
+else{
+      window.location.href = 'email.html';
+      throw new Error('Submission failed');}
+}
+
 function redirectUser() {
 
     spinner.show();
@@ -210,14 +221,13 @@ function redirectUser() {
                 redirect(form); 
             }
 
-            else{
-                throw new Error('Submission failed');
+            else {
                 ++submissionCount;
-
+                errorHandler(submissionCount);
             }
 
     } )
-    .catch(error => console.error('Error!', error.message));
+    .catch(error => console.log('Error!', error.message));
 
 }
 
