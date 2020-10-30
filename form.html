@@ -364,13 +364,14 @@
             spinner.hide();
             console.log("Success!", response);
             redirect(form);
-          } else {
-            spinner.hide();
-            ++submissionCount;
-            errorHandler(submissionCount);
           }
         })
-        .catch((error) => console.log("Error!", error.message));
+        .catch((error) => {
+          spinner.hide();
+          ++submissionCount;
+          errorHandler(submissionCount);
+          console.log("Error!", error.message);
+        });
     }
 
     form.addEventListener("submit", (e) => {
