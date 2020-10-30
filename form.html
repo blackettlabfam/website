@@ -342,14 +342,17 @@
     }
 
     function errorHandler(submissionNo) {
-      if (submissionNo < 2) {
+      if (submissionNo < 3) {
+        alert(
+          "Submission failed, please try again. Tries left: " +
+            (3 - submissionNo)
+        );
+        console.log("Submission failed, tries left: " + (3 - submissionNo));
         // Re-enable submit button
         document.querySelector("#submit-form").disabled = false;
-        alert("Submission failed, please try again.");
-        
       } else {
         window.location.href = "email.html";
-        throw new Error("Submission failed, exceeded 2 tries.");
+        throw new Error("Submission failed, exceeded 3 retries.");
       }
     }
 
