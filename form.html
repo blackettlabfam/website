@@ -343,10 +343,13 @@
 
     function errorHandler(submissionNo) {
       if (submissionNo < 2) {
+        // Re-enable submit button
+        document.querySelector("#submit-form").disabled = false;
         alert("Submission failed, please try again.");
+        
       } else {
         window.location.href = "email.html";
-        throw new Error("Submission failed");
+        throw new Error("Submission failed, exceeded 2 tries.");
       }
     }
 
@@ -359,6 +362,7 @@
             console.log("Success!", response);
             redirect(form);
           } else {
+            spinner.hide();
             ++submissionCount;
             errorHandler(submissionCount);
           }
