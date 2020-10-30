@@ -81,17 +81,17 @@
         <div class="form-group required form-row">
             <div class="form-label required col-sm-5">
                 <label class="control-label" for="fname">Your name</label>
-                <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" required>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" maxlength="30" required>
             </div>
             <div class="col-sm-7">
                 <label for="lname">  <br> </label>
-                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name" required>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name" maxlength="30" required>
             </div>
         </div>
 
         <div class="form-group form-row">
             <div class="form-label col">
-                <input type="text" class="form-control" id="fbname" name="fbname"  placeholder="Facebook account name">
+                <input type="text" class="form-control" id="fbname" name="fbname" placeholder="Facebook account name" maxlength="50">
                 <small id="small fbhelp" class="form-text text-muted">Optional: If this differs from your full name, enter your Facebook account name here</small>
             </div>
         </div>
@@ -133,7 +133,7 @@
         <div class="form-group form-label">
             <label class="control-label" for="interests"> To help us shape the dynamic of our network, please let us know what you hope to get out of joining us
             </label>
-            <textarea class="form-control" rows="3" name="interests" id="interests"></textarea>
+            <textarea class="form-control" rows="3" name="interests" id="interests" maxlength="1000"></textarea>
         </div>
 
 
