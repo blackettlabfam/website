@@ -25,6 +25,11 @@ function submissionHandler() {
     .catch((error) => console.error("Error!", error.message));
 }
 
+function blockWidgets() {
+  spinner.show();
+  document.querySelector("#submit-form").disabled = true;
+}
+
 function unblockWidgets() {
   spinner.hide();
   document.querySelector("#submit-form").disabled = false;
@@ -65,7 +70,8 @@ function handleError(submissionNo,error) {
 }
 
 function submitSignUpForm() {
-  spinner.show();
+  blockWidgets();
+
   const formData=new FormData(form);
   fetch(scriptURL, {
     method: "POST",
@@ -92,7 +98,6 @@ function submitSignUpForm() {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  document.querySelector("#submit-form").disabled = true;
 
   if(window.location.href.slice(0,8)==="file:///") {
     submitSignUpForm();
