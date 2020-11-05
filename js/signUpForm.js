@@ -25,13 +25,13 @@ function submissionHandler() {
     .catch((error) => console.error("Error!", error.message));
 }
 
-function resetWidgets() {
+function unblockWidgets() {
   spinner.hide();
   document.querySelector("#submit-form").disabled = false;
 }
 
 function redirect(form) {
-  resetWidgets();
+  unblockWidgets();
 
   var ukbased = form.elements.ukbased.value;
   var blackheritage = form.elements.blackheritage.value;
@@ -45,8 +45,8 @@ function redirect(form) {
 }
 
 function handleError(submissionNo,error) {
-  resetWidgets();
-  console.error(error)
+  unblockWidgets();
+  console.error(error);
 
   const maxTries=3
   if(submissionNo < maxTries) {
@@ -55,8 +55,12 @@ function handleError(submissionNo,error) {
       (maxTries - submissionNo)+"\n\n["+error+"]"
     );
   } else {
-    window.location.href = "email.html";
-    throw new Error("Submission failed, exceeded 3 retries.");
+    const formData=new FormData(form);
+    var data="";
+    formData.forEach((value,key) => {
+      if(key!=="g-recaptcha-response") {data+=key+": "+value+"\n";}
+    });
+    window.location.href = "email.html?data="+encodeURIComponent(data);
   }
 }
 

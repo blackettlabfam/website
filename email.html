@@ -29,7 +29,7 @@
 </head>
 
 <body>
-    
+
     <section class="white-section" id="title">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-light">
@@ -37,7 +37,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
@@ -59,17 +59,29 @@
             </div>
             </nav>
         </div>
-        
+
 
         <div class="container-fluid redirect">
             <h2 class="heading">
                 Sorry, the form submission has failed. Please request to join by emailing instead.
             </h2>
             <p >
-                <a href="mailto:connect@theblackettlabfamily.com?subject=Join (:Submit Failed)&body=First%20Name:%0D%0ALast%20Name:%0D%0AFB%20Name:%0D%0AUK%20Based:%0D%0ABlack%20Heritage:%0D%0APhysics%20Quals:%0D%0AInterests:%0D%0A"><button class="btn btn-outline-dark btn-lg" type="button"> <i class="contact-icon fas fa-envelope"></i>  Join via Email </button></a>
+                <a id="emailLink" href="mailto:community@theblackettlabfamily.com?subject=Join (:Submit Failed)"><button class="btn btn-outline-dark btn-lg" type="button"> <i class="contact-icon fas fa-envelope"></i>  Join via Email </button></a>
             </p>
-
         </div>
 
+<script>
+const url=new URL(window.location.href);
+const params=new URLSearchParams(url.search);
+const data=params.get("data");
+
+if(data!==null) {
+  var link=document.getElementById("emailLink");
+  link.setAttribute(
+    "href",
+    link.getAttribute("href")+"&body="+encodeURIComponent(data)
+  );
+}
+</script>
 </body>
 </html>
