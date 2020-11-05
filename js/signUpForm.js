@@ -83,7 +83,7 @@ function submitSignUpForm() {
       : Promise.reject(new Error(response.statusText+" ("+response.status+")"));
   })
   .then((respBody) => {
-    if(respBody["status"]==="fail") {
+    if(respBody["status"]==="failed") {
       return Promise.reject(new Error(respBody["error"]));
     }
     redirect(form);
