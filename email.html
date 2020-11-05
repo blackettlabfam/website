@@ -66,20 +66,19 @@
                 Sorry, the form submission has failed. Please request to join by emailing instead.
             </h2>
             <p >
-                <a id="emailLink" href="mailto:community@theblackettlabfamily.com?subject=Join (:Submit Failed)"><button class="btn btn-outline-dark btn-lg" type="button"> <i class="contact-icon fas fa-envelope"></i>  Join via Email </button></a>
+                <a id="emailLink" href="mailto:community@theblackettlabfamily.com?subject=Join Request"><button class="btn btn-outline-dark btn-lg" type="button"> <i class="contact-icon fas fa-envelope"></i>  Join via Email </button></a>
             </p>
         </div>
 
 <script>
-const url=new URL(window.location.href);
-const params=new URLSearchParams(url.search);
-const data=params.get("data");
+const i=window.location.href.indexOf("data=");
 
-if(data!==null) {
+if(i>-1) {
+  const data=window.location.href.slice(i+5);
   var link=document.getElementById("emailLink");
   link.setAttribute(
     "href",
-    link.getAttribute("href")+"&body="+encodeURIComponent(data)
+    link.getAttribute("href")+"&body="+data
   );
 }
 </script>
