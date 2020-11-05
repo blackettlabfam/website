@@ -70,8 +70,6 @@ function handleError(submissionNo,error) {
 }
 
 function submitSignUpForm() {
-  blockWidgets();
-
   const formData=new FormData(form);
   fetch(scriptURL, {
     method: "POST",
@@ -98,6 +96,7 @@ function submitSignUpForm() {
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  blockWidgets();
 
   if(window.location.href.slice(0,8)==="file:///") {
     submitSignUpForm();
