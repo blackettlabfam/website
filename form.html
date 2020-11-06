@@ -51,11 +51,6 @@
 
     <!-- Animate on Scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-    <!--- reCAPTCHA-->
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-
-    <script src="view.js"></script>
   </head>
   <body>
     <section class="white-section" id="title">
@@ -123,8 +118,8 @@
           The purpose of this short questionnaire is for you to introduce
           yourself to us, and for us to get to know you a bit more. If you have
           any questions about the questionnaire, feel free to contact us at
-          <a class="hyperlink" href="mailto:connect@theblackettlabfamily.com"
-            >connect@theblackettlabfamily.com</a
+          <a class="hyperlink" href="mailto:community@theblackettlabfamily.com"
+            >community@theblackettlabfamily.com</a
           >
         </h2>
       </div>
@@ -291,12 +286,11 @@
             </div>
 
             <label class="recaptcha-label" for="captcha">
-              <span>&nbsp;</span>
-              <div
-                id="recaptcha"
-                class="g-recaptcha brochure__form__captcha"
-                data-sitekey="6LdOO8YZAAAAABSjkMHBBweHky9EmoRNKHEoUOFj"
-              ></div>
+              <div  class="g-recaptcha"
+                    data-sitekey="6Lf6Kt8ZAAAAAGby_a96R6SncilAuY7t_3BN1LUp"
+                    data-callback="submitSignUpForm"
+                    data-error-callback="handleRecaptchaError"
+                    data-size="invisible"></div>
             </label>
           </div>
 
@@ -327,74 +321,10 @@
     </section>
 
     <div id="loader"></div>
+
+    <script src="js/signUpForm.js"></script>
+
+    <!--- reCAPTCHA-->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
-
-  <!--  Form JavaScript -->
-  <script>
-    const scriptURL =
-      "https://script.google.com/macros/s/AKfycbxVEA9ftoq1bst8mr-dK5gp8u3-ztCXWN6NNYloXSgYSWesw6VE/exec";
-    const form = document.forms["inductionform"];
-
-    var submissionCount = 0;
-    var spinner = $("#loader");
-
-    function submissionHandler() {
-      var t0 = performance.now();
-
-      fetch(scriptURL, { method: "POST", body: new FormData(form) })
-        .then((response) => {
-          ++submissionCount;
-          // console.log('Success!' + submissionCount, response);
-          var t1 = performance.now();
-          if (t1 - t0 > 2000) {
-            console.log(
-              "Time taken" + (t1 - t0) + "ms" + "Count" + submissionCount
-            );
-          }
-          if (submissionCount < 100) {
-            submissionHandler();
-          }
-        })
-        .catch((error) => console.error("Error!", error.message));
-    }
-
-    function errorHandler(submissionNo) {
-      if (submissionNo < 3) {
-        alert(
-          "Submission failed, please try again. Tries left: " +
-            (3 - submissionNo)
-        );
-        console.log("Submission failed, tries left: " + (3 - submissionNo));
-        // Re-enable submit button
-        document.querySelector("#submit-form").disabled = false;
-      } else {
-        window.location.href = "email.html";
-        throw new Error("Submission failed, exceeded 3 retries.");
-      }
-    }
-
-    function redirectUser() {
-      spinner.show();
-      fetch(scriptURL, { method: "POST", body: JSON.stringify({"form": new FormData(form), "recaptcha": grecaptcha.getResponse()}) })
-        .then((response) => {
-          if (response.ok) {
-            spinner.hide();
-            console.log("Success!", response);
-            redirect(form);
-          }
-        })
-        .catch((error) => {
-          spinner.hide();
-          ++submissionCount;
-          errorHandler(submissionCount);
-          console.log("Error!", error.message);
-        });
-    }
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      document.querySelector("#submit-form").disabled = true;
-      redirectUser();
-    });
-  </script>
 </html>
