@@ -303,6 +303,37 @@
             <i class="contact-icon fas fa-paper-plane"></i> Submit
           </button>
         </form>
+
+        <div id="havingTrouble" class="form-group darkBox" style="display: none;">
+          <h3 class="subheading">Having Trouble?</h3>
+          <p>
+          Perhaps your mobile signal is weak, or our servers are feeling overworked.
+          Either way, we apologise for the inconvenience.
+          If you're fed up of trying to submit the form, feel free to email your information to us instead by doing one of the following:
+          </p>
+          <div>
+            <ul style="display: inline-block; text-align: left;">
+              <li><b>Easiest option:</b> click
+                <a id="emailData" href="mailto:community@theblackettlabfamily.com?subject=Join%20Request" class="darkBoxLink">here</a> to
+                open a pre-written email in your email client; or
+              </li>
+              <li>Copy the code below and paste it into an email addressed to
+                <a href="mailto:community@theblackettlabfamily.com?subject=Join%20Request" class="darkBoxLink">community@theblackettlabfamily.com</a>.
+              </li>
+            </ul>
+          </div>
+          <textarea
+            class="form-control darkBoxSubBox"
+            rows="5"
+            id="codeBox"
+            readonly
+          ></textarea>
+          <button
+            type="button"
+            id="copyCode"
+            class="btn btn-lg btn-outline-light"
+          >Copy Code</button>
+        </div>
       </div>
 
       <footer id="footer">
