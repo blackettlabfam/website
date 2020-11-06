@@ -3,13 +3,15 @@ const scriptURL =
 
 const form = document.forms["inductionform"];
 
-// Apps Script sometimes takes ages to process request, so we need a timeout
+// Apps Script sometimes takes ages to process request, so we need a timeout.
 const appsScriptTimeoutMs=15000;
 
-// If user presses submit just before losing signal, and then comes back,
-// grecaptcha.execute() may block indefinitely. The only way to prevent this,
-// without sacrificing usability, seems to be to unconditionally reset reCAPTCHA
-// after a long timeout
+// The first time the user loses their network signal during
+// grecaptcha.execute(), reCAPTCHA calls the error handler. If they press submit
+// again, before the signal comes back, and the signal comes back before
+// reCAPTCHA reports an error, grecaptcha.execute() may block indefinitely. The
+// only reliable way to prevent this, without sacrificing usability, seems to be
+// to unconditionally reset reCAPTCHA after a long timeout.
 const recaptchaTimeoutMs=60000;
 
 const maxNoErrors=3;
