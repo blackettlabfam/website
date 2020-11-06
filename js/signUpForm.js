@@ -1,6 +1,3 @@
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbyFub_9Ps24J11wTWTlW73ro_FaMcIVXHqcdihcXw/exec";
-
 const form = document.forms["inductionform"];
 
 // Apps Script sometimes takes ages to process request, so we need a timeout.
@@ -15,7 +12,6 @@ const appsScriptTimeoutMs=15000;
 const recaptchaTimeoutMs=60000;
 
 const maxNoErrors=3;
-
 
 function fetchWithTimeout(timeLimitMs, resource, init) {
   return new Promise((resolve,reject) => {
@@ -36,6 +32,25 @@ function fetchWithTimeout(timeLimitMs, resource, init) {
 }
 
 const loadedLocally=window.location.href.slice(0,8)==="file:///";
+
+// This is based on https://stackoverflow.com/a/31374433/1292784 and
+// http://www.jspatterns.com/the-ridiculous-case-of-adding-a-script-element/
+function callWithAppsScriptURL(func,errorHandler) {
+  const appsScriptURL="https://script.google.com/macros/s/AKfycbyFub_9Ps24J11wTWTlW73ro_FaMcIVXHqcdihcXw/exec";
+  if(loadedLocally) {
+    const jsPath="js/.DO_NOT_COMMIT_recaptchaBypassCode.js";
+    console.log("Loading "+jsPath);
+    var script=document.createElement("script");
+    script.src=jsPath;
+    script.onload=() => {func(appsScriptURL+"?"+recaptchaBypassCode());};
+    script.onerror=() => {alert("File not found: "+jsPath); errorHandler();};
+
+    var first=document.getElementsByTagName("script")[0];
+    first.parentNode.insertBefore(script,first);
+  } else {
+    func(appsScriptURL);
+  }
+}
 
 var spinner = $("#loader");
 var attemptingSubmission=false;
@@ -109,24 +124,27 @@ function submitSignUpForm() {
   }
 
   const formData=new FormData(form);
-  fetchWithTimeout(appsScriptTimeoutMs, scriptURL, {
-    method: "POST",
-    cache: 'no-store',
-    redirect: 'follow',
-    body: formData
-  })
-  .then(response => {
-    return response.ok
-      ? response.json()
-      : Promise.reject(new Error(response.statusText+" ("+response.status+")"));
-  })
-  .then(respBody => {
-    if(respBody["status"]==="failed") {
-      return Promise.reject(new Error(respBody["error"]));
-    }
-    redirect(form);
-  })
-  .catch(handleError);
+  callWithAppsScriptURL(scriptURL => {
+    fetchWithTimeout(appsScriptTimeoutMs, scriptURL, {
+      method: "POST",
+      cache: 'no-store',
+      redirect: 'follow',
+      body: formData
+    })
+    .then(response => {
+      return response.ok
+        ? response.json()
+        : Promise.reject(
+            new Error(response.statusText+" ("+response.status+")"));
+    })
+    .then(respBody => {
+      if(respBody["status"]==="failed") {
+        return Promise.reject(new Error(respBody["error"]));
+      }
+      redirect(form);
+    })
+    .catch(handleError);
+  }, postSubmitHandler);
 }
 
 form.addEventListener("submit", (e) => {
