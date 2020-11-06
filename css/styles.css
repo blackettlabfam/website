@@ -29,7 +29,7 @@ html{
 .subheading{
     font-size: 2rem;
     font-weight: 100;
-    
+
 }
 /* Sections */
 
@@ -49,7 +49,7 @@ html{
 }
 
 .section-div{
-    padding: 6% 12%; 
+    padding: 6% 12%;
 
 }
 /* Containers */
@@ -72,7 +72,7 @@ html{
 
 .navbar-light .navbar-nav .nav-link{
     font-size: 1.2rem;
-    font-weight: 400; 
+    font-weight: 400;
     color: darkgray;
 }
 
@@ -231,7 +231,7 @@ html{
 }
 
 .mission-box{
-    margin-bottom: 5rem; 
+    margin-bottom: 5rem;
     padding: 0 24%;
 }
 
@@ -320,7 +320,7 @@ background-color: transparent;
 .gallery-img{
     opacity: 0.6;
     padding: 0.5%;
-    
+
 }
 
 .gallery-img:hover{
@@ -371,15 +371,15 @@ background-color: transparent;
 }
 
 
-/* 
+/*
 
 Archived code
 
 html
 <video src="/Users/sophie/Documents/Udemy/Web Development/The Blackett Lab Family/images/stockvideo_01837.mp4" autoplay muted loop>
             </video>
-            
-video { 
+
+video {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -400,7 +400,7 @@ video {
     -o-animation: fadeIn ease 3s;
     -ms-animation: fadeIn ease 3s;
   }
-  
+
 /* Media query */
 /* Tablets */
 @media (max-width: 989px){
@@ -458,26 +458,26 @@ video {
         margin-left: 1%;
         margin-right: 1%;
     }
-    
+
 
     .testimonial-div{
         padding: 0% 20% 10% 20%;
-         
+
      }
-    
+
     .cta-text{
         font-size: 1.2rem;
         margin: 0 7%;
     }
 
 }
-  
+
 /* Mobile */
 @media (max-width: 414px){
     p{
         font-size: 0.9rem;
     }
-    
+
     .mission-box{
         padding: 0 2%;
     }
@@ -502,7 +502,7 @@ video {
         display: inline;
     }
 
-    
+
     .gallery-div{
         padding: 15% 4%;
     }
@@ -511,13 +511,13 @@ video {
         position: absolute;
         top: 20%;
     }
-    
+
 
     .title-description{
         font-size: 1.5rem;
         margin: 2rem 2rem ;
     }
-  
+
     .team-img{
         width: 8rem;
         height: 8rem;
@@ -535,7 +535,7 @@ video {
 
     .testimonial-div{
         padding: 0% 20% 15% 20%;
-         
+
      }
     .mission-title{
         padding: 0 0;
@@ -553,7 +553,7 @@ video {
     }
 
 }
-  
+
   @keyframes fadeIn{
     0% {
       opacity:0;
@@ -562,7 +562,7 @@ video {
       opacity:1;
     }
   }
-  
+
   @-moz-keyframes fadeIn {
     0% {
       opacity:0;
@@ -571,7 +571,7 @@ video {
       opacity:1;
     }
   }
-  
+
   @-webkit-keyframes fadeIn {
     0% {
       opacity:0;
@@ -580,7 +580,7 @@ video {
       opacity:1;
     }
   }
-  
+
   @-o-keyframes fadeIn {
     0% {
       opacity:0;
@@ -589,7 +589,7 @@ video {
       opacity:1;
     }
   }
-  
+
   @-ms-keyframes fadeIn {
     0% {
       opacity:0;
@@ -598,7 +598,7 @@ video {
       opacity:1;
     }
   }
-  
+
 
  /* ---------------------------- */
 
@@ -628,7 +628,7 @@ video {
     text-align: left;
 }
 .form-div{
-   padding: 0 15%; 
+   padding: 0 15%;
 }
 
 .form-group{
@@ -673,7 +673,7 @@ video {
         line-height: 2rem;
         margin-bottom: 3rem;
     }
-    
+
     .form-subtitle{
         font-size: 1rem;
         line-height: 1.5rem;
@@ -691,7 +691,7 @@ video {
 
     .btn{
         font-size: 0.8rem;
-        
+
     }
 
     .form-control{
@@ -769,7 +769,7 @@ video {
   .redirect{
       margin-bottom: 5%;
         padding: 2% 15%;
-    
+
   }
 
   .redirect-link{
@@ -791,3 +791,28 @@ video {
   .list-item{
       margin: 2% auto;
   }
+
+.darkBox {
+  margin: 1em auto 0 auto;
+  padding: 1em;
+  max-width: 800px;
+  background-color: black;
+  color: white;
+  word-break: break-word;
+}
+
+textarea.darkBoxSubBox {
+  background-color: white !important;
+  color: darkgrey !important;
+  margin: 1em 0;
+  resize: none;
+}
+
+a.darkBoxLink:link, a.darkBoxLink:visited {
+  color: #fca311;
+  text-decoration: none;
+}
+a.darkBoxLink:hover, a.darkBoxLink:active {
+  color: #fca311;
+  text-decoration: underline;
+}

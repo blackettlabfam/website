@@ -52,6 +52,10 @@ function callWithAppsScriptURL(func,errorHandler) {
   }
 }
 
+function showHavingTrouble() {
+  document.querySelector("#havingTrouble").style.display="inherit";
+}
+
 var spinner = $("#loader");
 var attemptingSubmission=false;
 
@@ -83,6 +87,43 @@ function redirect(form) {
 
 var errorCount = 0;
 
+function formToJavascript() {
+  const formData=new FormData(form);
+  var f=
+    "function addMember () {\n"+
+    "  e={\n"+
+    "    'parameter': {\n"+
+    "      'bypass-recaptcha': recaptchaBypassCode";
+  formData.forEach((value,key) => {
+    if(key!=="g-recaptcha-response") {
+      f+=",\n"+
+    "      '"+key+"': "+JSON.stringify(value);
+    }
+  });
+  f+="\n"+
+    "    }\n"+
+    "  };\n"+
+    "  doPost(e);\n"+
+    "}";
+  return f;
+}
+
+function updateFromFormData() {
+  const body=
+    "===== Please do not modify the code below this line =====\n\n"+
+    formToJavascript();
+
+  var link=document.querySelector("#emailData");
+  link.setAttribute(
+    "href",
+    "mailto:community@theblackettlabfamily.com?subject=Join%20Request&body="+
+    encodeURIComponent("\n\n"+body)
+  );
+
+  var box=document.querySelector("#codeBox");
+  box.textContent=body;
+}
+
 function handleError(error) {
   console.error(error);
 
@@ -99,12 +140,7 @@ function handleError(error) {
   postSubmitHandler();
 
   if(!canRetry) {
-    const formData=new FormData(form);
-    var data="";
-    formData.forEach((value,key) => {
-      if(key!=="g-recaptcha-response") {data+=key+": "+value+"\n";}
-    });
-    window.location.href = "email.html?data="+encodeURIComponent(data);
+    window.location.href = "email.html?data="+encodeURIComponent(formToJavascript());
   }
 }
 
@@ -167,3 +203,14 @@ form.addEventListener("submit", (e) => {
     grecaptcha.execute();
   }
 });
+
+form.addEventListener("change",(e) => updateFromFormData());
+
+document.querySelector("#copyCode").addEventListener("click",(e) => {
+  var codeBox=document.querySelector("#codeBox");
+  codeBox.select();
+  codeBox.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+});
+
+updateFromFormData();
