@@ -1,9 +1,24 @@
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbyFub_9Ps24J11wTWTlW73ro_FaMcIVXHqcdihcXw/exec";
 const form = document.forms["inductionform"];
+const appsScriptTimeoutMs=10000;
 
 var submissionCount = 0;
 var spinner = $("#loader");
+
+function fetchWithTimeout(timeLimitMs, resource, init) {
+  return new Promise((resolve,reject) => {
+    var controller = new AbortController();
+    init["signal"]=controller.signal;
+
+    const timer=setTimeout(() => {
+      controller.abort();
+      reject(new Error("Server took too long to respond"));
+    }, timeLimitMs);
+
+    fetch(resource,init).then(resolve,reject).finally(()=>clearTimeout(timer));
+  });
+}
 
 function submissionHandler() {
   var t0 = performance.now();
@@ -11,12 +26,9 @@ function submissionHandler() {
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
       ++submissionCount;
-      // console.log('Success!' + submissionCount, response);
       var t1 = performance.now();
       if (t1 - t0 > 2000) {
-        console.log(
-          "Time taken" + (t1 - t0) + "ms" + "Count" + submissionCount
-        );
+        console.log("Time taken: "+(t1-t0)+"ms. Count: "+submissionCount);
       }
       if (submissionCount < 100) {
         submissionHandler();
@@ -71,7 +83,7 @@ function handleError(submissionNo,error) {
 
 function submitSignUpForm() {
   const formData=new FormData(form);
-  fetch(scriptURL, {
+  fetchWithTimeout(appsScriptTimeoutMs, scriptURL, {
     method: "POST",
     cache: 'no-store',
     redirect: 'follow',
