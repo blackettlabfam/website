@@ -1,54 +1,55 @@
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbyFub_9Ps24J11wTWTlW73ro_FaMcIVXHqcdihcXw/exec";
-const form = document.forms["inductionform"];
-const appsScriptTimeoutMs=10000;
 
-var submissionCount = 0;
-var spinner = $("#loader");
+const form = document.forms["inductionform"];
+
+// Apps Script sometimes takes ages to process request, so we need a timeout
+const appsScriptTimeoutMs=15000;
+
+// If user presses submit just before losing signal, and then comes back,
+// grecaptcha.execute() may block indefinitely. The only way to prevent this,
+// without sacrificing usability, seems to be to unconditionally reset reCAPTCHA
+// after a long timeout
+const recaptchaTimeoutMs=60000;
+
+const maxNoErrors=3;
+
 
 function fetchWithTimeout(timeLimitMs, resource, init) {
   return new Promise((resolve,reject) => {
     var controller = new AbortController();
     init["signal"]=controller.signal;
 
-    const timer=setTimeout(() => {
+    const timeout=setTimeout(() => {
       controller.abort();
+      console.log("Aborted fetch");
       reject(new Error("Server took too long to respond"));
     }, timeLimitMs);
+    console.log("Launched fetch timeout");
 
-    fetch(resource,init).then(resolve,reject).finally(()=>clearTimeout(timer));
+    fetch(resource,init).then(resolve,reject).finally(
+      ()=>{clearTimeout(timeout); console.log("Cleared fetch timeout");}
+    );
   });
 }
 
-function submissionHandler() {
-  var t0 = performance.now();
+var spinner = $("#loader");
+var attemptingSubmission=false;
 
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) => {
-      ++submissionCount;
-      var t1 = performance.now();
-      if (t1 - t0 > 2000) {
-        console.log("Time taken: "+(t1-t0)+"ms. Count: "+submissionCount);
-      }
-      if (submissionCount < 100) {
-        submissionHandler();
-      }
-    })
-    .catch((error) => console.error("Error!", error.message));
-}
-
-function blockWidgets() {
+function preSubmitHandler() {
   spinner.show();
   document.querySelector("#submit-form").disabled = true;
+  attemptingSubmission=true;
 }
 
-function unblockWidgets() {
+function postSubmitHandler() {
   spinner.hide();
   document.querySelector("#submit-form").disabled = false;
+  attemptingSubmission=false;
 }
 
 function redirect(form) {
-  unblockWidgets();
+  postSubmitHandler();
 
   var ukbased = form.elements.ukbased.value;
   var blackheritage = form.elements.blackheritage.value;
@@ -61,17 +62,24 @@ function redirect(form) {
   }
 }
 
-function handleError(submissionNo,error) {
-  unblockWidgets();
+var errorCount = 0;
+
+function handleError(error) {
   console.error(error);
 
-  const maxTries=3
-  if(submissionNo < maxTries) {
+  ++errorCount;
+  const canRetry=errorCount < maxNoErrors;
+
+  if(canRetry && attemptingSubmission) {
     alert(
       "Submission failed, please try again. Tries left: " +
-      (maxTries - submissionNo)+"\n\n["+error+"]"
+      (maxNoErrors - errorCount)+"\n\n["+error+"]"
     );
-  } else {
+  }
+
+  postSubmitHandler();
+
+  if(!canRetry) {
     const formData=new FormData(form);
     var data="";
     formData.forEach((value,key) => {
@@ -81,7 +89,19 @@ function handleError(submissionNo,error) {
   }
 }
 
+function handleRecaptchaError() {
+  handleError(new Error("Cannot connect to reCAPTCHA server"));
+}
+
+var recaptchaTimeout=null;
+
 function submitSignUpForm() {
+  if(recaptchaTimeout!==null) {
+    clearTimeout(recaptchaTimeout);
+    recaptchaTimeout=null;
+    console.log("Cleared reCAPTCHA timeout");
+  }
+
   const formData=new FormData(form);
   fetchWithTimeout(appsScriptTimeoutMs, scriptURL, {
     method: "POST",
@@ -89,30 +109,37 @@ function submitSignUpForm() {
     redirect: 'follow',
     body: formData
   })
-  .then((response) => {
+  .then(response => {
     return response.ok
       ? response.json()
       : Promise.reject(new Error(response.statusText+" ("+response.status+")"));
   })
-  .then((respBody) => {
+  .then(respBody => {
     if(respBody["status"]==="failed") {
       return Promise.reject(new Error(respBody["error"]));
     }
     redirect(form);
   })
-  .catch((error) => {
-    ++submissionCount;
-    handleError(submissionCount,error);
-  });
+  .catch(handleError);
 }
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  blockWidgets();
+  preSubmitHandler();
 
   if(window.location.href.slice(0,8)==="file:///") {
     submitSignUpForm();
   } else {
+    recaptchaTimeout=setTimeout(() => {
+      if(recaptchaTimeout!==null) {
+        grecaptcha.reset();
+        handleRecaptchaError();
+        recaptchaTimeout=null;
+        console.log("Reset reCAPTCHA");
+      }
+    }, recaptchaTimeoutMs);
+    console.log("Launched reCAPTCHA timeout");
+
     grecaptcha.execute();
   }
 });
