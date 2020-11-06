@@ -33,6 +33,8 @@ function fetchWithTimeout(timeLimitMs, resource, init) {
   });
 }
 
+const loadedLocally=window.location.href.slice(0,8)==="file:///";
+
 var spinner = $("#loader");
 var attemptingSubmission=false;
 
@@ -90,7 +92,9 @@ function handleError(error) {
 }
 
 function handleRecaptchaError() {
-  handleError(new Error("Cannot connect to reCAPTCHA server"));
+  if(!loadedLocally) {
+    handleError(new Error("Cannot connect to reCAPTCHA server"));
+  }
 }
 
 var recaptchaTimeout=null;
@@ -127,7 +131,7 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   preSubmitHandler();
 
-  if(window.location.href.slice(0,8)==="file:///") {
+  if(loadedLocally) {
     submitSignUpForm();
   } else {
     recaptchaTimeout=setTimeout(() => {
