@@ -662,6 +662,7 @@ video {
 
 
 
+/* Tablets */
 
 @media (max-width: 989px){
 
@@ -700,13 +701,22 @@ video {
     }
 }
 
+/* Mobile */
 
 @media (max-width: 414px){
+
+    .container-fluid{
+        padding: 2% 8%;
+    }
 
     .form-title{
         font-size: 2rem;
         margin-bottom: 2rem;
 
+    }
+
+    h2.welcome{
+        font-size: 2rem;
     }
 
     #recaptcha{
@@ -794,8 +804,8 @@ video {
   }
 
 .darkBox {
-  margin: 1em auto 0 auto;
-  padding: 1em;
+  margin: 5% auto 0 auto;
+  padding: 5% 5%;
   max-width: 800px;
   background-color: black;
   color: white;
