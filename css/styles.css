@@ -652,6 +652,7 @@ video {
 
 .hyperlink{
     color: #3d3d3d;
+    word-break: break-word;
 }
 
 
@@ -773,19 +774,19 @@ video {
   }
 
   .redirect-link{
-      font-size: 0.8rem;
+      font-size: 0.8rem;  
+      margin: 0 0 0 5%;
+      list-style-position: outside;
   }
 
   ul{
       list-style: inside;
       list-style-type: square;
   }
-  .redirect-list{
-    padding: 0 0;
-  }
 
   .redirect-links{
-      margin: 5% 0;
+      margin: 5% auto;
+      text-align: left;
   }
 
   .list-item{
@@ -823,4 +824,6 @@ ul.centreList {
   margin: 0 auto;
   list-style-position: outside;
   width: 80%;
+  padding: 0 0;
+
 }
