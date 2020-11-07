@@ -1,7 +1,7 @@
 const form = document.forms["inductionform"];
 
 // Apps Script sometimes takes ages to process request, so we need a timeout.
-const appsScriptTimeoutMs=15000;
+const appsScriptTimeLimitMs=15000;
 
 // The first time the user loses their network signal during
 // grecaptcha.execute(), reCAPTCHA calls the error handler. If they press submit
@@ -9,7 +9,7 @@ const appsScriptTimeoutMs=15000;
 // reCAPTCHA reports an error, grecaptcha.execute() may block indefinitely. The
 // only reliable way to prevent this, without sacrificing usability, seems to be
 // to unconditionally reset reCAPTCHA after a long timeout.
-const recaptchaTimeoutMs=60000;
+const recaptchaTimeLimitMs=60000;
 
 const maxNoErrors=3;
 
@@ -38,22 +38,30 @@ const loadedLocally=window.location.href.slice(0,8)==="file:///";
 function callWithAppsScriptURL(func,errorHandler) {
   const appsScriptURL="https://script.google.com/macros/s/AKfycbyFub_9Ps24J11wTWTlW73ro_FaMcIVXHqcdihcXw/exec";
   if(loadedLocally) {
-    const jsPath="js/.DO_NOT_COMMIT_recaptchaBypassCode.js";
-    console.log("Loading "+jsPath);
-    var script=document.createElement("script");
-    script.src=jsPath;
-    script.onload=() => {func(appsScriptURL+"?"+recaptchaBypassCode());};
-    script.onerror=() => {alert("File not found: "+jsPath); errorHandler();};
+    if(typeof recaptchaBypassCode !== "function") {
+      const jsPath="js/.DO_NOT_COMMIT_recaptchaBypassCode.js";
+      console.log("Loading "+jsPath);
+      var script=document.createElement("script");
+      script.src=jsPath;
+      script.onload=() => {func(appsScriptURL+"?"+recaptchaBypassCode());};
+      script.onerror=() => {alert("File not found: "+jsPath); errorHandler();};
 
-    var first=document.getElementsByTagName("script")[0];
-    first.parentNode.insertBefore(script,first);
+      var first=document.getElementsByTagName("script")[0];
+      first.parentNode.insertBefore(script,first);
+
+      return;
+    } else {
+      func(appsScriptURL+"?"+recaptchaBypassCode());
+    }
   } else {
     func(appsScriptURL);
   }
 }
 
 function showHavingTrouble() {
-  document.querySelector("#havingTrouble").style.display="inherit";
+  var havingTrouble=document.querySelector("#havingTrouble");
+  havingTrouble.style.display="inherit";
+  havingTrouble.scrollIntoView(true);
 }
 
 var spinner = $("#loader");
@@ -72,8 +80,6 @@ function postSubmitHandler() {
 }
 
 function redirect(form) {
-  postSubmitHandler();
-
   var ukbased = form.elements.ukbased.value;
   var blackheritage = form.elements.blackheritage.value;
   var physicsqual = form.elements.physicsqual.value;
@@ -87,31 +93,24 @@ function redirect(form) {
 
 var errorCount = 0;
 
-function formToJavascript() {
+function formToKeyValuePairs() {
   const formData=new FormData(form);
-  var f=
-    "function addMember () {\n"+
-    "  e={\n"+
-    "    'parameter': {\n"+
-    "      'bypass-recaptcha': recaptchaBypassCode";
+  var data="";
+  var isFirst=true;
   formData.forEach((value,key) => {
     if(key!=="g-recaptcha-response") {
-      f+=",\n"+
-    "      '"+key+"': "+JSON.stringify(value);
+      if(!isFirst) {data+=',\n';}
+      data+='"'+key+'": '+JSON.stringify(value);
+      isFirst=false;
     }
   });
-  f+="\n"+
-    "    }\n"+
-    "  };\n"+
-    "  doPost(e);\n"+
-    "}";
-  return f;
+  return data;
 }
 
-function updateFromFormData() {
+function updateFormCode() {
   const body=
-    "===== Please do not modify the code below this line =====\n\n"+
-    formToJavascript();
+    "===== Please do not modify the data below this line =====\n\n"+
+    formToKeyValuePairs();
 
   var link=document.querySelector("#emailData");
   link.setAttribute(
@@ -120,7 +119,7 @@ function updateFromFormData() {
     encodeURIComponent("\n\n"+body)
   );
 
-  var box=document.querySelector("#codeBox");
+  var box=document.querySelector("#dataBox");
   box.textContent=body;
 }
 
@@ -131,17 +130,12 @@ function handleError(error) {
   const canRetry=errorCount < maxNoErrors;
 
   if(canRetry && attemptingSubmission) {
-    alert(
-      "Submission failed, please try again. Tries left: " +
-      (maxNoErrors - errorCount)+"\n\n["+error+"]"
-    );
+    alert("Submission failed, please try again.\n\n["+error+"]");
   }
 
   postSubmitHandler();
 
-  if(!canRetry) {
-    window.location.href = "email.html?data="+encodeURIComponent(formToJavascript());
-  }
+  if(!canRetry) {showHavingTrouble();}
 }
 
 function handleRecaptchaError() {
@@ -161,7 +155,7 @@ function submitSignUpForm() {
 
   const formData=new FormData(form);
   callWithAppsScriptURL(scriptURL => {
-    fetchWithTimeout(appsScriptTimeoutMs, scriptURL, {
+    fetchWithTimeout(appsScriptTimeLimitMs, scriptURL, {
       method: "POST",
       cache: 'no-store',
       redirect: 'follow',
@@ -190,6 +184,8 @@ form.addEventListener("submit", (e) => {
   if(loadedLocally) {
     submitSignUpForm();
   } else {
+    setTimeout(showHavingTrouble, recaptchaTimeLimitMs);
+
     recaptchaTimeout=setTimeout(() => {
       if(recaptchaTimeout!==null) {
         grecaptcha.reset();
@@ -197,20 +193,20 @@ form.addEventListener("submit", (e) => {
         recaptchaTimeout=null;
         console.log("Reset reCAPTCHA");
       }
-    }, recaptchaTimeoutMs);
+    }, recaptchaTimeLimitMs);
     console.log("Launched reCAPTCHA timeout");
 
     grecaptcha.execute();
   }
 });
 
-form.addEventListener("change",(e) => updateFromFormData());
+form.addEventListener("change",(e) => updateFormCode());
 
-document.querySelector("#copyCode").addEventListener("click",(e) => {
-  var codeBox=document.querySelector("#codeBox");
-  codeBox.select();
-  codeBox.setSelectionRange(0, 99999);
+document.querySelector("#copyData").addEventListener("click",(e) => {
+  var dataBox=document.querySelector("#dataBox");
+  dataBox.select();
+  dataBox.setSelectionRange(0, 2000);
   document.execCommand("copy");
 });
 
-updateFromFormData();
+updateFormCode();

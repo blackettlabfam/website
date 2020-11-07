@@ -816,3 +816,11 @@ a.darkBoxLink:hover, a.darkBoxLink:active {
   color: #fca311;
   text-decoration: underline;
 }
+
+ul.centreList {
+  text-align: left;
+  display: table;
+  margin: 0 auto;
+  list-style-position: outside;
+  width: 80%;
+}
