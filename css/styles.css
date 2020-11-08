@@ -775,11 +775,10 @@ video {
     100% { transform: rotate(360deg); }
   }
 
-  /* Redirect page */
+  /* Redirect page CSS */
 
   .redirect{
       margin-bottom: 5%;
-        padding: 2% 15%;
 
   }
 
