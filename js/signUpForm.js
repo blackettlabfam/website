@@ -158,8 +158,7 @@ function ensureRecaptchaIsLoaded(onLoad) {
     onLoad();
   } else {
     const errMsg=
-      "Failed to load reCAPTCHA. Try refreshing the page when your internet "+
-      "connection is restored.";
+      "Can't load reCAPTCHA. Try refreshing the page when you're back online.";
     prependScriptNode(
       "https://www.google.com/recaptcha/api.js",onLoad,
       ()=>{alert(errMsg);}

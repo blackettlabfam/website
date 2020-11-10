@@ -125,26 +125,29 @@
       </div>
 
       <div class="container-fluid form-div">
-        <div class="form-group form-row form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="recaptchaCookies"
-            name="recaptchaCookies"
-            autocomplete="off"
-            required="True"
-          />
-          <label class="control-label col" for="recaptchaCookies">
-            <p class="fade-in orangeText" id="cookiesOptOut" style="display:none">Please refresh/leave the page to opt out.</p>
-            <p>
-            This questionnaire uses <a class="hyperlink" href="https://www.google.com/recaptcha/about/" target="_blank">reCAPTCHA</a> to block spambots.
-            We hope you won't mind Google storing the browser cookies that come with our use of this service
-            (see their <a class="hyperlink" href="https://policies.google.com/privacy" target="_blank">privacy policy</a> for details).
-            If you're ok with this, you'll need to check the box to say so, before you can proceed with the questionnaire.
-            If you'd rather that Google kept their cookies to themselves, you can join by emailing us at the address above.
-            It would be more convenient for us if you could use the questionnaire, but we understand and applaud the determination of anyone who eschews all Google services.
-            </p>
-          </label>
+        <div class="form-group">
+          <p class="data-promise">
+          This questionnaire uses <a class="hyperlink" href="https://www.google.com/recaptcha/about/" target="_blank">reCAPTCHA</a> to block spambots.
+          We hope you won't mind Google storing the browser cookies that come with our use of this service.
+          If you're ok with this, you'll need to give your consent below, before you can proceed.
+          If you'd rather that Google kept their cookies to themselves, you can join us by emailing us at the address above.
+          It would be more convenient for us if you could use the questionnaire, but we understand and applaud the determination of anyone who eschews all Google services.
+          </p>
+
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="recaptchaCookies"
+              name="recaptchaCookies"
+              autocomplete="off"
+            />
+            <label for="recaptchaCookies">
+              <span class="notice" id="cookiesOptOut" style="display:none">[To opt out, refresh or leave the page]</span>
+              I consent to Google storing cookies, and using my information in accordance with their
+              <a class="hyperlink" href="https://policies.google.com/privacy" target="_blank">privacy policy</a>.
+            </label>
+          </div>
         </div>
 
         <form id="inductionform" name="inductionform" style="filter: opacity(35%)">

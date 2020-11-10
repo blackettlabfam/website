@@ -837,6 +837,7 @@ ul.centreList {
 
 }
 
-.orangeText {
+.notice {
   color: #fca311;
+  font-weight: bold;
 }
