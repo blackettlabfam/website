@@ -104,12 +104,12 @@
           interaction, and fun, and encourage members to get involved with lots
           of social, educational, and professional opportunities. Our primary
           platform to connect with each other is Facebook, though you can engage
-          with us on Instagram<a  
+          with us on Instagram<a
             href="https://www.instagram.com/blackettlabfam/"
             target="_blank"
             ><i class="footer-icon fab fa-instagram"></i
           ></a>
-          and Twitter<a 
+          and Twitter<a
             href="https://twitter.com/blackettlabfam"
             target="_blank"
             ><i class="footer-icon fab fa-twitter"></i
@@ -118,14 +118,36 @@
           The purpose of this short questionnaire is for you to introduce
           yourself to us, and for us to get to know you a bit more. If you have
           any questions about joining, feel free to contact us at
-          <a class="hyperlink" href="mailto:community@theblackettlabfamily.com"
+          <a class="hyperlink" href="mailto:community@theblackettlabfamily.com?subject=Join%20Request"
             >community@theblackettlabfamily.com</a
           >
         </h2>
       </div>
 
       <div class="container-fluid form-div">
-        <form id="inductionform" name="inductionform">
+        <div class="form-group form-row form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="recaptchaCookies"
+            name="recaptchaCookies"
+            autocomplete="off"
+            required="True"
+          />
+          <label class="control-label col" for="recaptchaCookies">
+            <p class="fade-in orangeText" id="cookiesOptOut" style="display:none">Please refresh/leave the page to opt out.</p>
+            <p>
+            This questionnaire uses <a class="hyperlink" href="https://www.google.com/recaptcha/about/" target="_blank">reCAPTCHA</a> to block spambots.
+            We hope you won't mind Google storing the browser cookies that come with our use of this service
+            (see their <a class="hyperlink" href="https://policies.google.com/privacy" target="_blank">privacy policy</a> for details).
+            If you're ok with this, you'll need to check the box to say so, before you can proceed with the questionnaire.
+            If you'd rather that Google kept their cookies to themselves, you can join by emailing us at the address above.
+            It would be more convenient for us if you could use the questionnaire, but we understand and applaud the determination of anyone who eschews all Google services.
+            </p>
+          </label>
+        </div>
+
+        <form id="inductionform" name="inductionform" style="filter: opacity(35%)">
           <div class="form-group required form-row">
             <div class="form-label required col-sm-5">
               <label class="control-label" for="fname">Your name </label>
@@ -136,6 +158,7 @@
                 name="fname"
                 placeholder="First name"
                 maxlength="30"
+                disabled
                 required
               />
             </div>
@@ -148,6 +171,7 @@
                 name="lname"
                 placeholder="Last name"
                 maxlength="30"
+                disabled
                 required
               />
             </div>
@@ -162,6 +186,7 @@
                 name="fbname"
                 placeholder="Facebook account name"
                 maxlength="50"
+                disabled
               />
               <small id="small fbhelp" class="form-text text-muted"
                 >Optional: If this differs from your full name, enter your
@@ -182,6 +207,7 @@
                 name="email"
                 placeholder="name@example.com"
                 maxlength="100"
+                disabled
                 required
               />
               <small id="small emailhelp" class="form-text text-muted"
@@ -195,7 +221,7 @@
               <label class="control-label" for="ukbased"
                 >Are you based in the UK?
               </label>
-              <select class="form-control" name="ukbased" id="ukbased" required>
+              <select class="form-control" name="ukbased" id="ukbased" disabled required>
                 <option selected disabled value="">Select option...</option>
                 <option value="Yes-based">
                   Yes, I am currently based in the UK
@@ -219,6 +245,7 @@
                 name="blackheritage"
                 id="blackheritage"
                 value="Yes"
+                disabled
                 required
               >
                 <option selected disabled value="">Select option...</option>
@@ -238,6 +265,7 @@
               name="physicsqual"
               id="physicsqual"
               value="Yes"
+              disabled
               required
             >
               <option selected disabled value="">Select option...</option>
@@ -261,6 +289,7 @@
               name="interests"
               id="interests"
               maxlength="1000"
+              disabled
             ></textarea>
           </div>
 
@@ -280,23 +309,22 @@
                 value="agreed"
                 id="privacypolicy"
                 name="privacypolicy"
-                required="True"
+                disabled
+                required
               />
-              <label class="form-check-label" for="check">
+              <label class="form-check-label" for="privacypolicy">
                 I have read and agree to the data collection and storage terms
                 outlined in the Privacy Policy.
               </label>
             </div>
 
-            <label class="recaptcha-label" for="captcha">
-              <div
-                class="g-recaptcha"
-                data-sitekey="6Lf6Kt8ZAAAAAGby_a96R6SncilAuY7t_3BN1LUp"
-                data-callback="submitSignUpForm"
-                data-error-callback="handleRecaptchaError"
-                data-size="invisible"
-              ></div>
-            </label>
+            <div
+              class="g-recaptcha"
+              data-sitekey="6Lf6Kt8ZAAAAAGby_a96R6SncilAuY7t_3BN1LUp"
+              data-callback="submitSignUpForm"
+              data-error-callback="handleRecaptchaError"
+              data-size="invisible"
+            ></div>
           </div>
 
           <button
@@ -304,6 +332,7 @@
             id="submit-form"
             name="submit-form"
             class="btn btn-outline-dark"
+            disabled
           >
             <i class="contact-icon fas fa-paper-plane"></i> Submit
           </button>
@@ -378,8 +407,5 @@
     <div id="loader"></div>
 
     <script src="js/signUpForm.js"></script>
-
-    <!--- reCAPTCHA-->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </body>
 </html>

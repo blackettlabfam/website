@@ -1,5 +1,3 @@
-const form = document.forms["inductionform"];
-
 // Apps Script sometimes takes ages to process request, so we need a timeout.
 const appsScriptTimeLimitMs=15000;
 
@@ -12,6 +10,10 @@ const appsScriptTimeLimitMs=15000;
 const recaptchaTimeLimitMs=60000;
 
 const maxNoErrors=3;
+
+const form = document.forms["inductionform"];
+var cookiesCheckbox=document.querySelector("#recaptchaCookies");
+
 
 function fetchWithTimeout(timeLimitMs, resource, init) {
   return new Promise((resolve,reject) => {
@@ -33,6 +35,17 @@ function fetchWithTimeout(timeLimitMs, resource, init) {
 
 const loadedLocally=window.location.href.slice(0,8)==="file:///";
 
+function prependScriptNode(url,onLoad,onError) {
+  console.log("Loading "+url);
+  var script=document.createElement("script");
+  script.src=url;
+  script.onload=onLoad;
+  script.onerror=onError;
+
+  var first=document.getElementsByTagName("script")[0];
+  first.parentNode.insertBefore(script,first);
+}
+
 // This is based on https://stackoverflow.com/a/31374433/1292784 and
 // http://www.jspatterns.com/the-ridiculous-case-of-adding-a-script-element/
 function callWithAppsScriptURL(func,errorHandler) {
@@ -40,15 +53,11 @@ function callWithAppsScriptURL(func,errorHandler) {
   if(loadedLocally) {
     if(typeof recaptchaBypassCode !== "function") {
       const jsPath="js/.DO_NOT_COMMIT_recaptchaBypassCode.js";
-      console.log("Loading "+jsPath);
-      var script=document.createElement("script");
-      script.src=jsPath;
-      script.onload=() => {func(appsScriptURL+"?"+recaptchaBypassCode());};
-      script.onerror=() => {alert("File not found: "+jsPath); errorHandler();};
-
-      var first=document.getElementsByTagName("script")[0];
-      first.parentNode.insertBefore(script,first);
-
+      prependScriptNode(
+        jsPath,
+        () => {func(appsScriptURL+"?"+recaptchaBypassCode());},
+        () => {alert("File not found: "+jsPath); errorHandler();}
+      );
       return;
     } else {
       func(appsScriptURL+"?"+recaptchaBypassCode());
@@ -144,6 +153,20 @@ function handleRecaptchaError() {
   }
 }
 
+function ensureRecaptchaIsLoaded(onLoad) {
+  if(typeof grecaptcha === "object") {
+    onLoad();
+  } else {
+    const errMsg=
+      "Failed to load reCAPTCHA. Try refreshing the page when your internet "+
+      "connection is restored.";
+    prependScriptNode(
+      "https://www.google.com/recaptcha/api.js",onLoad,
+      ()=>{alert(errMsg);}
+    );
+  }
+}
+
 var recaptchaTimeout=null;
 
 function submitSignUpForm() {
@@ -197,6 +220,34 @@ form.addEventListener("submit", (e) => {
     console.log("Launched reCAPTCHA timeout");
 
     grecaptcha.execute();
+  }
+});
+
+cookiesCheckbox.addEventListener("change",(e) => {
+  var optOut=document.querySelector("#cookiesOptOut");
+  var filter;
+  var disableForm;
+
+  if(cookiesCheckbox.checked) {
+    optOut.style.display="none";
+    disableForm=false;
+    filter="none";
+  } else {
+    optOut.style.display="inherit";
+    disableForm=true;
+    filter="opacity(35%)";
+  }
+
+  var submitButton=document.querySelector("#submit-form");
+  for(var i=0; i<form.elements.length; ++i) {
+    if(disableForm || form.elements[i]!==submitButton) {
+      form.elements[i].disabled=disableForm;
+    }
+  }
+  form.style.filter=filter;
+
+  if(!disableForm) {
+    ensureRecaptchaIsLoaded(()=>{submitButton.disabled=false;});
   }
 });
 

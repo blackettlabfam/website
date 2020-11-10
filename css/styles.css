@@ -651,13 +651,13 @@ video {
 }
 
 .hyperlink{
-    color: #3d3d3d;
+    color: darkgray;
     word-break: break-word;
 }
 
-
 .hyperlink:hover{
     color: #fca311;
+    text-decoration: none;
 }
 
 
@@ -784,7 +784,7 @@ video {
   }
 
   .redirect-link{
-      font-size: 0.8rem;  
+      font-size: 0.8rem;
       margin: 0 0 0 5%;
       list-style-position: outside;
   }
@@ -836,4 +836,8 @@ ul.centreList {
   width: 80%;
   padding: 0 0;
 
+}
+
+.orangeText {
+  color: #fca311;
 }
