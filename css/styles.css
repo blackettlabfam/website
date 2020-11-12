@@ -43,7 +43,7 @@ html{
     color: white;
 }
 .white-section{
-    background-image: url('https://i.ibb.co/7JxMd9h/background-circles2.png');
+    background-image: url('../images/background-circles2.png');
     background-size: cover;
     color: black;
 }
