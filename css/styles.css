@@ -97,3 +97,28 @@ hr{
     text-align: left;
     float: left;
 }
+#about p{
+    margin: 0 0 2rem 0;
+}
+
+.button{
+    font-size: 1.25rem;
+    color:gray;
+    background-color: black;
+    padding: 0 0;
+    border: none;
+}
+
+.button:hover{
+    color: #FF6700;
+}
+
+#readmore{
+    display: none;
+}
+
+#LessBtn{
+    display: none;
+}
+
+/* Meet The Team */
