@@ -9,3 +9,9 @@ font-family: "Bebas Neue";
 font-weight: 800;
 src: url("../bebas-neue/BebasNeue-Bold.ttf");
 }
+
+@font-face {
+  font-family: "Bebas Neue";
+  font-weight: 600;
+  src: url("../bebas-neue/BebasNeue-Book.ttf");
+  }
