@@ -29,6 +29,11 @@ p{
     text-align: left;
 }
 
+.page-div{
+    margin: 5rem  5rem;
+}
+.end-div{
+padding: 0rem 2rem 5rem 2rem;}
 /* Navigation Bar */
 
 .navbar-brand{
@@ -126,7 +131,7 @@ hr{
     margin-top: 0;
 }
 
-.button{
+#about .button{
     font-size: 1.25rem;
     color:gray;
     background-color: rgba(0,0,0,0.05);
@@ -148,12 +153,38 @@ hr{
 
 /* Meet The Team */
 
-.device{
+.device-box{
     background-image: url('../images/TBLF_Graphic\ Device_RGB.png');
-    background-size: contain;
-    width: 50%;
+    background-size: cover;
+    width: 10%;
     height: 100%;
     background-repeat: no-repeat;
+    position: absolute; /* or absolute */
+    top: 90rem;
+    right:0;
+
+}
+
+.device{
+    overflow: hidden;
+}
+
+.device-box-mid{
+    top: 130rem;
+    left:0;
+    width: 16%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.device-box-low{
+    top: 200rem;
+    right:0;
+    width: 12%;
+}
+
+#meet-the-team{
+    margin-bottom: 5rem;
 }
 
 #meet-the-team .left-div{
@@ -182,10 +213,127 @@ hr{
     font-weight: 300;
 }
 
+/* Mission */
+
+
+
+#mission .mission-div{
+    padding: 0 5rem 0 7rem;
+    text-align: left;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+#mission .mission-card{
+    margin: 5rem 0;
+    white-space: normal;
+    vertical-align: middle;
+
+}
+
+#mission .mission-icon  {
+float: left;    
+max-width:50%;
+max-height:50%;
+width: 6rem;
+margin: 0 2rem 0 0;
+}
+
+.icon{
+    padding: 2.5rem 2rem;
+    width: 8rem;
+}
+
+.represent{
+    padding: 2rem 0 0 0;
+}
+
+#mission p{
+font-size: 1rem;
+font-weight: 400;
+}
+#mission .mission-title{
+    font-family: 'Bebas Neue';
+    font-weight: 800;
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+
+#mission h3{
+    text-align: left;
+    margin-left: 5rem;
+}
+
+#mission .page-div{
+    margin-top: 2rem;
+}
+/* Gallery */
+
+#gallery{
+    background-color: white;
+    color: black;
+}
+
+#gallery .gallery-div{
+    padding: 8em 5rem 0 5rem;
+    }
+
+.speech-icon{
+    width: 2rem;
+}
+
+#gallery h1{
+    text-align: left;
+}
+
+.carousel-inner .container-fluid{
+    padding: 2rem 2rem;
+}
+
+#gallery .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    margin-right: 8rem;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    margin-left: 8rem;
+}
+
+#gallery .media-box{
+padding: 5rem 5rem;
+}
+
+ /* CTA */
+
+ #cta h4{
+     padding: 5rem 5rem 0rem 5rem;
+ }
+ #cta .outer{
+    width: 100%;
+ }
+ #cta .cta-div{
+     background-color: rgb(41, 41, 41);
+     height: 400px;
+     bottom: 50rem;
+     overflow: hidden;
+     margin: 0 auto;
+     width: 1000px;
+ }
+
+ .device-box-cta{
+    top: 250rem;
+    left:0;
+    width: 16%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
 /* Footer */
 
 #footer{
-    margin: 4rem 0;
+    margin: 4rem 0rem;
 }
 
 #footer .footer-icon{
@@ -199,14 +347,4 @@ hr{
 
 #footer p{
     font-size: .6rem;
-}
-/* Mission */
-
-#mission .mission-div{
-    padding: 0 5rem 0 7rem;
-    text-align: left;
-}
-
-#mission .icon-div{
-    width: 10%;
 }
