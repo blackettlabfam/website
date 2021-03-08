@@ -1,6 +1,6 @@
-h1, h2, h3, h4, h5, h6{
+/* Base styling */
+h1, h2, h3{
     font-family: 'Bebas Neue';
-    font-weight: 800;
 }
 
 body{
@@ -8,150 +8,31 @@ body{
     text-align: center;
     background-color:black;
     color: white;
+    padding-top: 18%; /* For the sticky navbar */
 }
 
 html{
     scroll-behavior:smooth;
 }
 
-p{
+h4, h5, h6, p{
     font-weight: 600;
     font-size: 1.2rem;
 }
 
+/* Layout styling */
+
 .heading{
     font-size: 5.5rem;
-    margin: 0 5rem 0 0;
+    font-weight: 800;
+    margin: 0 5rem 0 0;  /* for the horizontal line underneath */
     }
     
-.left-div{
-    margin: 12rem 0 0 5rem;
+.shell{
+    margin: 8rem 5rem;
     text-align: left;
+    padding: 2rem 0;
 }
-
-.page-div{
-    margin: 5rem  5rem;
-}
-.end-div{
-padding: 0rem 2rem 5rem 2rem;}
-/* Navigation Bar */
-
-.navbar-brand{
-    width: 8rem;
-    margin: 3rem 3rem;
-}
-
-.nav-item{
-    margin-right: 1rem;
-    font-size: 0.8rem;
-}
-
-.nav-line{
-    border-style: none solid none none;
-    border-width: 1px;
-    line-height: 1px;
-    margin-left: 2rem;
-    color: white;
-    display: inline;
-}
-
-.nav-icon{
-    margin-left: 0;
-    margin-right: 0;
-}
-.navbar-dark:hover .navbar-nav:hover .nav-link:hover{ 
-    color: #FF6700;
-}
-
-/* Set the border color */
-
-.custom-toggler.navbar-toggler {
-border-color:none;
-border:none;}
-    
-/* Setting the stroke to green using rgb values (0, 128, 0) */
-/*     
-.custom-toggler 
-.navbar-toggler-icon {
-background-image: 
-url(
-"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(91, 67, 242, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-} */
-
-
-/* TITLE */
-
-#title img{
-    width: 40rem;
-}
-#title .header-div{
-    text-align: left;
-}
-
-.blurred-edge{
-        background-image: url('../images/Yolanda Ohene.jpg');
-        width: 50%;
-        height: 90%;
-        background-repeat: no-repeat;
-        background-size:contain;
-        /* you need to match the shadow color to your background or image border for the desired effect*/
-        box-shadow: 16px 16px 16px 16px black inset;
-        position: absolute;
-        top: 30%;
-        left: 50px;
-        z-index: -10;
-}
-
-#title p{
-    margin: 0 5rem 0 0;
-}
-
-hr{
-    width: 10rem;
-    height: 0.4rem;
-    margin: 1.5rem auto 3rem 0;
-    background-color: #FF6700;
-}
-
-
-/* About Us */
-
-#about{
-    background-image: url('../images/earth.jpg');
-    background-size: cover;
-}
-
-#about .left-div{
-    margin-right: 60%;
-    padding-bottom: 10rem;
-}
-
-#about p{
-    padding:0 0 2rem 0;
-    margin-top: 0;
-}
-
-#about .button{
-    font-size: 1.25rem;
-    color:gray;
-    background-color: rgba(0,0,0,0.05);
-    padding: 0 0;
-    border: none;
-}
-
-.button:hover{
-    color: #FF6700;
-}
-
-#readmore{
-    display: none;
-}
-
-#LessBtn{
-    display: none;
-}
-
-/* Meet The Team */
 
 .device-box{
     background-image: url('../images/TBLF_Graphic\ Device_RGB.png');
@@ -183,55 +64,204 @@ hr{
     width: 12%;
 }
 
-#meet-the-team{
-    margin-bottom: 5rem;
+.device-box-cta{
+    top: 250rem;
+    left:0;
+    width: 16%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
-#meet-the-team .left-div{
-    margin: 0 0  0 5rem;
+/* State styling */
+
+.text-regular{
+    font-weight: 400;
 }
 
-#meet-the-team .row{
-    margin-top: 10rem;
+.heading-div{
+    margin: 8rem auto 0 0;
+    text-align: left;}
+    
+.center-div{
+    text-align: center;}
+     
+
+/* Navigation Bar */
+
+.navbar {
+    overflow: hidden;
+    background-color: rgba(0,0,0,.1);
+    z-index: 1000000;
+    margin-right: 2rem;
+  }
+  
+  /* Navbar links
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  } */
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+ .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+.navbar-brand{
+    width: 8rem;
+    margin: 0 0 0 3rem;
+    padding: 3rem 0;
 }
-.team-img{
-    width: 12rem;
-    height: 12rem;
-    max-width: 20rem;
-    margin-bottom: 2rem;
-    border-radius: 50%;
-    border: solid white 6px;
+
+.nav-item{
+    margin-right: 1rem;
+    font-size: 0.8rem;
+}
+
+.nav-line{
+    border-style: none solid none none;
+    border-width: 1px;
+    line-height: 1px;
+    margin-left: 2rem;
+    color: white;
+    display: inline;
+}
+
+.nav-icon{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.navbar-dark:hover .navbar-nav:hover .nav-link:hover{ 
+    color: #FF6700;
+}
+
+/* Removes the border around burger icon  */
+.custom-toggler.navbar-toggler {
+border-color:none;
+border:none;}
+    
+/* Setting the stroke to green using rgb values (0, 128, 0) */
+    
+/* .custom-toggler 
+.navbar-toggler-icon {
+background-image: 
+url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(91, 67, 242, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+} */
+
+
+/* Title */
+
+.header .heading-div{
+    margin: 8% 2rem 0rem auto;
+
+}
+.header-image{
+        background-image: url('../images/Yolanda Ohene.jpg');
+        width: 50%;
+        height: 80%;
+        background-repeat: no-repeat;
+        background-size:cover;
+        /* you need to match the shadow color to your background or image border for the desired effect*/
+        box-shadow: 16px 16px 16px 16px black inset;
+        position: absolute;
+        top: 30%;
+        left: 50px;
+        z-index: -10;
+}
+
+.heading-div p{
+    margin-bottom: 1rem;}
+
+hr{
+    width: 10rem;
+    height: 0.4rem;
+    margin: 1.5rem auto 3rem 0;
+    background-color: #FF6700;
+}
+
+/* About Us */
+
+.about{
+    background-image: url('../images/earth.jpg');
+    background-size: cover;
+}
+
+.about .inner-div{
+    margin: 0 50% 0 auto;
+}
+
+.about p{
+    padding:0 0 2rem 0;
+    margin-top: 0;
+}
+
+.about .button{
+    font-size: 1.25rem;
+    color:gray;
+    background-color: rgba(0,0,0,0.05);
+    padding: 0 0;
+    border: none;
+}
+
+.button:hover{
+    color: #FF6700;
+}
+
+#readmore{
+    display: none;
+}
+
+#LessBtn{
+    display: none;
+}
+
+/* Meet The Team */
+
+.meet-the-team .heading-div{
+margin-top: 0;}
+
+.float-div{
+    float: right;
+    text-align: left;
 }
 
 .name{    
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 800;
+    margin:  5rem 2rem 0 0 ;
+    padding: 0 0 0 1rem;
 }
 
 .role{
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 300;
+    margin: 0  2rem 0 0;
+    padding: 0 0 0 1rem;
+
 }
 
 /* Mission */
 
-
-
-#mission .mission-div{
-    padding: 0 5rem 0 7rem;
-    text-align: left;
+.mission-div{
+    padding: 0 0 0 7rem;
     display: inline-block;
     white-space: nowrap;
 }
 
-#mission .mission-card{
+.mission-card{
     margin: 5rem 0;
     white-space: normal;
     vertical-align: middle;
-
 }
 
-#mission .mission-icon  {
+.mission-icon  {
 float: left;    
 max-width:50%;
 max-height:50%;
@@ -252,6 +282,7 @@ margin: 0 2rem 0 0;
 font-size: 1rem;
 font-weight: 400;
 }
+
 #mission .mission-title{
     font-family: 'Bebas Neue';
     font-weight: 800;
@@ -259,15 +290,6 @@ font-weight: 400;
     margin-bottom: 0;
 }
 
-
-#mission h3{
-    text-align: left;
-    margin-left: 5rem;
-}
-
-#mission .page-div{
-    margin-top: 2rem;
-}
 /* Gallery */
 
 #gallery{
@@ -275,76 +297,118 @@ font-weight: 400;
     color: black;
 }
 
-#gallery .gallery-div{
+.gallery-div{
     padding: 8em 5rem 0 5rem;
     }
 
 .speech-icon{
-    width: 2rem;
+    width: 1rem;
 }
 
-#gallery h1{
-    text-align: left;
+.speech-icon-flip{
+    transform: scaleX(-1);
+}
+
+.testimonial-text{
+    font-family: Titillium Web;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 
 .carousel-inner .container-fluid{
     padding: 2rem 2rem;
 }
 
-#gallery .carousel-control-prev-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
-    margin-right: 8rem;
+.carousel-indicators li{
+    background-color: black;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+
+
+ol.carousel-indicators{
+    margin-bottom: 0;
 }
 
-.carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f00' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
-    margin-left: 8rem;
+.carousel-item em{
+    font-weight: 100;
+    color: gray;
 }
 
-#gallery .media-box{
+.carousel-indicators .active{
+    background-color: #FF6700;
+}
+
+.curator-box{
 padding: 5rem 5rem;
+}
+
+.find-us{
+    padding: 5rem 0;
 }
 
  /* CTA */
 
- #cta h4{
-     padding: 5rem 5rem 0rem 5rem;
- }
- #cta .outer{
+.cta-div .heading{
+     padding: 4rem 0 ;
+     font-size: 2rem;
+    margin: 0 0; }
+
+ .cta-outer{
     width: 100%;
  }
- #cta .cta-div{
+
+.cta-div{
      background-color: rgb(41, 41, 41);
-     height: 400px;
-     bottom: 50rem;
+     height: 550px;
+     bottom: 10rem;
      overflow: hidden;
      margin: 0 auto;
-     width: 1000px;
+     width: 80%;
+     z-index: 100;
+     position: relative;
  }
 
- .device-box-cta{
-    top: 250rem;
-    left:0;
-    width: 16%;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+ .cta-div .inner{
+     padding: 0 4rem;
+ }
+
+.white-border-round{
+    border: 0.8px solid;
+    border-radius: 10px;
+    border-color: white;
+    width: 80px;
+    height: auto;
+    padding: 0.5rem 0rem;
+    margin: 2rem auto 0 auto;
+    position: relative;   
 }
 
 /* Footer */
 
-#footer{
-    margin: 4rem 0rem;
+.footer{
+    color: white;
+    padding: 0 0;
 }
 
-#footer .footer-icon{
+.white-border-round a{
+    color: white;
+}
+
+.white-border-round a:hover{
+    color: #FF6700;
+}
+
+.footer-icon{
     margin: 2rem 1rem;
     color: white;
 }
 
-#footer .footer-icon:hover{
+.footer-icon:hover{
     color: #FF6700;
 }
 
-#footer p{
-    font-size: .6rem;
+.footer p{
+    font-size: 0.5rem;
 }
