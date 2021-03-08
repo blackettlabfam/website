@@ -35,7 +35,7 @@ h4, h5, h6, p{
 }
 
 .device-box{
-    background-image: url('../images/TBLF_Graphic\ Device_RGB.png');
+    background-image: url('../images/graphic_device.png');
     background-size: cover;
     width: 10%;
     height: 100%;
@@ -163,7 +163,7 @@ url(
 
 }
 .header-image{
-        background-image: url('../images/Yolanda Ohene.jpg');
+        background-image: url('../images/header.jpg');
         width: 50%;
         height: 80%;
         background-repeat: no-repeat;
@@ -214,7 +214,7 @@ hr{
     color: #FF6700;
 }
 
-#readmore{
+#ReadMore{
     display: none;
 }
 
@@ -283,7 +283,7 @@ font-size: 1rem;
 font-weight: 400;
 }
 
-#mission .mission-title{
+.mission-title{
     font-family: 'Bebas Neue';
     font-weight: 800;
     font-size: 2rem;
@@ -292,7 +292,7 @@ font-weight: 400;
 
 /* Gallery */
 
-#gallery{
+.gallery{
     background-color: white;
     color: black;
 }
