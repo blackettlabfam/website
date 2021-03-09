@@ -8,7 +8,7 @@ body{
     text-align: center;
     background-color:black;
     color: white;
-    padding-top: 18%; /* For the sticky navbar */
+    padding-top: 10%; /* For the sticky navbar */
 }
 
 html{
@@ -18,7 +18,14 @@ html{
 h4, h5, h6, p{
     font-weight: 600;
     font-size: 1.2rem;
+
 }
+
+.maintext{
+    font-size: 1.6rem;
+    padding-bottom: 1.3rem;
+}
+
 
 /* Layout styling */
 
@@ -74,7 +81,7 @@ h4, h5, h6, p{
 
 /* State styling */
 
-.text-regular{
+.subtext{
     font-weight: 400;
 }
 
@@ -85,6 +92,15 @@ h4, h5, h6, p{
 .center-div{
     text-align: center;}
      
+
+.hyperlink{
+    color: gray;
+
+}
+
+.hyperlink:hover{
+    color: #FF6700;
+}
 
 /* Navigation Bar */
 
@@ -240,8 +256,7 @@ margin-top: 0;}
 }
 
 .role{
-    font-size: 1.2rem;
-    font-weight: 300;
+    font-weight: 400;
     margin: 0  2rem 0 0;
     padding: 0 0 0 1rem;
 
@@ -251,6 +266,7 @@ margin-top: 0;}
 
 .mission-div{
     padding: 0 0 0 7rem;
+    margin-bottom: 5rem;
     display: inline-block;
     white-space: nowrap;
 }
@@ -269,7 +285,7 @@ width: 6rem;
 margin: 0 2rem 0 0;
 }
 
-.icon{
+.obj-icon{
     padding: 2.5rem 2rem;
     width: 8rem;
 }
@@ -278,17 +294,19 @@ margin: 0 2rem 0 0;
     padding: 2rem 0 0 0;
 }
 
-#mission p{
-font-size: 1rem;
-font-weight: 400;
+.mission .heading-div h3{
+    font-family: Titillium Web;
 }
 
 .mission-title{
-    font-family: 'Bebas Neue';
     font-weight: 800;
-    font-size: 2rem;
     margin-bottom: 0;
 }
+
+.mission-text {
+font-weight: 400;
+} 
+
 
 /* Gallery */
 
@@ -312,7 +330,7 @@ font-weight: 400;
 .testimonial-text{
     font-family: Titillium Web;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .carousel-inner .container-fluid{
@@ -348,6 +366,9 @@ padding: 5rem 5rem;
     padding: 5rem 0;
 }
 
+.find-us h3{
+    font-weight: 400;
+}
  /* CTA */
 
 .cta-div .heading{
@@ -370,7 +391,7 @@ padding: 5rem 5rem;
      position: relative;
  }
 
- .cta-div .inner{
+.cta-div .inner{
      padding: 0 4rem;
  }
 
@@ -412,3 +433,30 @@ padding: 5rem 5rem;
 .footer p{
     font-size: 0.5rem;
 }
+
+/* Join Us Page */
+
+.shell.form{
+    width: 50%;
+    margin-bottom: 0rem;
+    padding-bottom: 0;
+}
+
+.form-group .paragraph{
+margin-bottom: 3rem;
+}
+
+.form-group .subparagraph{
+font-weight: 400;    
+font-size: 1rem;}
+
+.form a{
+    margin: 0 0.5rem;
+    color: white;
+}
+
+.form a:hover{
+    color: #FF6700;
+}
+
+/* Responsiveness */
