@@ -32,6 +32,7 @@
     <script src="third-party/bootstrap-4.5.3/bootstrap.min.js"></script>
 
     <script src="js/action.js"></script>
+    <script src="js/popup.js"></script>
 </head>
 
 <body>
@@ -331,9 +332,9 @@
                             </div>
 
                             <div class="carousel-item container-fluid">
-                                <h3 class="testimonial-text"> I often think about the importance of being a good
+                                <h3 class="testimonial-text"> "I often think about the importance of being a good
                                     representative of a Black british PhD student even though I didn't have the most
-                                    positive experience myself. </h3>
+                                    positive experience myself."</h3>
                                 <em> Monifa, PhD Student </em>
                             </div>
 
@@ -388,10 +389,18 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6">
-                        Join our community using the button below
-                        <div class="white-border-round"><a href="form.html"><i
-                                    class="fas fa-2x fa-user-plus"></i></a></div>
+                    <div class="popup-button col-md-6">
+                        Join our community using the button below or click <a class="clickhere" onclick="togglePopup()">here</a> to read more.
+                        <span class="popup-text" id="popup"> 
+                           
+                                Members of The Blackett Lab Family connect primarily through Facebook. Our network offers academic and professional support, casual socialising and networking with like minded people and exciting opportunities to work together for positive social impact. 
+                                We have met regularly (and virtually!) for fun, topical chat, and exchanging opportunities to collaborate together on cool social media projects, including work for the Institute of Physics and school outreach.
+                            
+                             </span>
+                             <div class="white-border-round"><i
+                                    class="fas fa-2x fa-user-plus"></i>
+                 
+                        </div>
                     </div>
                     <div class=" col-md-6">
                         connect@theblackettlabfamily.com

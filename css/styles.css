@@ -17,28 +17,26 @@ html{
 
 h4, h5, h6, p{
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
 }
 
 .maintext{
-    font-size: 1.6rem;
+    font-size: 1rem;
     padding-bottom: 1.3rem;
 }
-
 
 /* Layout styling */
 
 .heading{
-    font-size: 5.5rem;
+    font-size: 3rem;
     font-weight: 800;
-    margin: 0 5rem 0 0;  /* for the horizontal line underneath */
+    margin: 0 2rem 0 0;  /* for the horizontal line underneath */
     }
     
 .shell{
-    margin: 8rem 5rem;
     text-align: left;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .device-box{
@@ -86,7 +84,7 @@ h4, h5, h6, p{
 }
 
 .heading-div{
-    margin: 8rem auto 0 0;
+    margin: 8rem auto 0 2rem;
     text-align: left;}
     
 .center-div{
@@ -108,7 +106,7 @@ h4, h5, h6, p{
     overflow: hidden;
     background-color: rgba(0,0,0,.1);
     z-index: 1000000;
-    margin-right: 2rem;
+    padding: 0 2rem;
   }
   
   /* Navbar links
@@ -129,9 +127,8 @@ h4, h5, h6, p{
   }
   
 .navbar-brand{
-    width: 8rem;
-    margin: 0 0 0 3rem;
-    padding: 3rem 0;
+    width: 5rem;
+    padding: 2rem 0;
 }
 
 .nav-item{
@@ -175,21 +172,18 @@ url(
 /* Title */
 
 .header .heading-div{
-    margin: 8% 2rem 0rem auto;
+    margin: 3rem 2rem 0rem 2rem;
 
 }
 .header-image{
         background-image: url('../images/header.jpg');
-        width: 50%;
-        height: 80%;
+        width: 100%;
+        height: 300px;
         background-repeat: no-repeat;
-        background-size:cover;
+        background-size:contain;
         /* you need to match the shadow color to your background or image border for the desired effect*/
-        box-shadow: 16px 16px 16px 16px black inset;
-        position: absolute;
-        top: 30%;
-        left: 50px;
-        z-index: -10;
+        margin: 8rem auto 0 2rem ;
+        top: 10%;
 }
 
 .heading-div p{
@@ -210,7 +204,7 @@ hr{
 }
 
 .about .inner-div{
-    margin: 0 50% 0 auto;
+    margin: 0 0;
 }
 
 .about p{
@@ -387,7 +381,7 @@ padding: 5rem 5rem;
      overflow: hidden;
      margin: 0 auto;
      width: 80%;
-     z-index: 100;
+     z-index: 99;
      position: relative;
  }
 
@@ -406,6 +400,61 @@ padding: 5rem 5rem;
     position: relative;   
 }
 
+.popup-button {
+    cursor: pointer;
+  }
+
+.popup-button .popup-text {
+    visibility: hidden;
+    width: 90%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 2rem 2rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 110%;
+    left: 60%;
+    margin-left: -50%;
+  }
+
+.popup-button  .popup-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+  }
+
+
+  .popup-button .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+  .clickhere{
+      color: gray;
+  }
+
+  .clickhere:hover{
+      color: #FF6700;
+  }
 /* Footer */
 
 .footer{
@@ -460,3 +509,48 @@ font-size: 1rem;}
 }
 
 /* Responsiveness */
+
+@media (min-width:768px){
+    .heading{
+        font-size: 5rem;
+        margin: 0 5rem 0 0;
+        }
+    .header .heading-div{
+            margin: 8% 2rem 0rem auto;
+        
+        }
+
+        .header-image{
+            background-image: url('../images/header.jpg');
+            width: 50%;
+            height: 80%;
+            background-repeat: no-repeat;
+            background-size:cover;
+            /* you need to match the shadow color to your background or image border for the desired effect*/
+            box-shadow: 16px 16px 16px 16px black inset;
+            position: absolute;
+            top: 30%;
+            left: 50px;
+            z-index: -10;
+    }
+
+    .navbar-brand{
+        width: 8rem;
+        margin: 0 0 0 3rem;
+        padding: 3rem 0;
+    }
+    
+    .about .inner-div{
+        margin: 0 50% 0 auto;
+    }
+    .shell{
+        margin: 8rem 5rem;
+        text-align: left;
+        padding: 2rem 0;
+    }
+
+    h4, h5, h6, p{
+        font-size: 1.2rem;}
+
+        .maintext{font-size: 1.3rem;}
+}
