@@ -8,7 +8,7 @@ body{
     text-align: center;
     background-color:black;
     color: white;
-    padding-top: 0%; /* For the sticky navbar */
+    padding-top: 5%; /* For the sticky navbar */
 }
 
 html{
@@ -110,7 +110,7 @@ h4, h5, h6, p{
 
 .navbar {
     overflow: hidden;
-    background-color: rgba(0,0,0,.1);
+    background-color: rgba(0,0,0,0.9);
     z-index: 1000000;
     padding: 0rem 2rem;
   }
@@ -207,7 +207,6 @@ hr{
     background-size: cover;
 }
 
-    
 .about .inner-div{
     margin: 0 10% 0 auto ;
 }
@@ -254,7 +253,7 @@ display: flex;
 }
 
 .image{
-    width: 30%; 
+    width: 8rem; 
     margin:  0 0;
     padding: 0 0;
 
@@ -293,7 +292,7 @@ display: flex;
 float: left;    
 width: 5rem;
 vertical-align: middle;
-margin: 2rem 2rem 2rem 0;
+margin: 1rem 2rem 2rem 0;
 height: 100%;
 }
 
@@ -436,7 +435,7 @@ padding: 3rem 0rem;
     position: absolute;
     font-size: 80%;
     z-index: 101;
-    bottom: 60%;
+    bottom: 69%;
     left: 60%;
     margin-left: -55%;
   }
@@ -570,7 +569,7 @@ font-size: 80%;
     }
 
     .navbar-brand{
-        width: 8rem;
+        width: 6rem;
         margin: 0 0 0 2rem;
         padding: 3rem 0;
     }
@@ -620,8 +619,8 @@ font-size: 80%;
 
     }
     .mission-icon{
-        width: 8rem;
-        padding: 0rem  0;
+        width: 6rem;
+        padding: 1rem  0;
         margin: 0 4rem 0 0;
     }
     .mission-title{
@@ -632,13 +631,16 @@ font-size: 80%;
         font-size: 1.2rem;
     } 
 
-
-.testimonial-text{
-    font-size: 1.2rem;
-}
-.gallery-div{
-    padding: 8em 0rem 0 0rem;
+    .represent{
+        margin: 1rem 4rem 2rem 0;
     }
+
+    .testimonial-text{
+        font-size: 1.2rem;
+    }
+    .gallery-div{
+        padding: 8em 0rem 0 0rem;
+        }
 
     .cta-div .inner{
         padding: 0rem 3rem 1rem 3rem;
@@ -649,35 +651,6 @@ font-size: 80%;
         border-color: white;
         border-width: 2px;
     }
-
-
-    .popup-button .popup-text {
-        visibility: hidden;
-        width: 90%;
-        background-color: white;
-        color: black;
-        text-align: center;
-        border-radius: 6px;
-        padding: 1rem 1rem;
-        position: absolute;
-        font-size: 1rem;
-        z-index: 101;
-        bottom: 10%;
-        left: 60%;
-        margin-left: -55%;
-      }
-    
-    .popup-button  .popup-text::after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px;
-        border-width: 10px;
-        border-style: solid;
-        border-color: white transparent transparent transparent;
-      }
-    
 
 
 .form .heading{
@@ -699,4 +672,21 @@ font-size: 1rem;}
 .form a:hover{
     color: #FF6700;
 }
+
+.find-us h3{
+    font-size: 1.6rem;
+}
+
+
+.popup-button .popup-text {
+   font-size: 0.8rem;
+   bottom: 110%;
+   left: 63%;
+   width: 85%;
+  }
+
+  .navbar{    background-color: rgba(0,0,0,.1);
+}
+
+
 }
