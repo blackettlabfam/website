@@ -228,6 +228,10 @@ hr{
     color: #FF6700;
 }
 
+.btn:hover{
+    color: #FF6700;
+}
+
 #ReadMore{
     display: none;
 }
@@ -573,11 +577,11 @@ resize: none;
 }
 
 a.darkBoxLink:link, a.darkBoxLink:visited {
-color: #fca311;
+color: #FF6700;
 text-decoration: none;
 }
 a.darkBoxLink:hover, a.darkBoxLink:active {
-color: #fca311;
+color: #FF6700;
 text-decoration: underline;
 }
 
@@ -592,7 +596,7 @@ padding: 0 0;
 }
 
 .notice {
-color: #fca311;
+color: #FF6700;
 font-weight: bold;
 }
 
