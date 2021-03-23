@@ -565,6 +565,9 @@ margin: 5% auto 0 auto;
 padding: 5% 5%;
 max-width: 800px;
 background-color: black;
+border: white 1px;
+border-style: solid;
+border-radius: 5px;
 color: white;
 word-break: break-word;
 }
