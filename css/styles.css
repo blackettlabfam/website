@@ -211,6 +211,7 @@ hr{
     background-image: url('../images/ramon-salinero.jpg');
     background-size: contain;
     background-repeat: repeat-x;
+    width: 100%;
 }
 
 .about .inner-div{
@@ -268,10 +269,19 @@ display: flex;
     padding: 0 0;
 
 }
+
+
+.team-div .job{
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0  2rem 0 0;
+    padding: 0 0 0 1rem;
+}
+
 .name{    
     font-size: 1.3rem;
     font-weight: 800;
-    margin: 0 0 0 1rem;
+    margin: 1rem 0 0 1rem;
 }
 
 
@@ -279,8 +289,6 @@ display: flex;
     font-size: 90%;
     font-weight: 400;
     margin-left: 1rem;
-
-
 
 }
 
@@ -665,15 +673,18 @@ font-weight: bold;
     }
 
     h4, h5, h6, p{
-        font-size: 1.3rem;}
+        font-size: 1.2rem;}
 
-    .maintext{font-size: 1.5rem;}
+    .maintext{font-size: 1.3rem;}
 
 
-        .about{
+    .about{
             background-repeat: no-repeat;
         background-size:cover;
+        max-width: 100%;
+height:auto;
         }
+        
     .about .heading-div{
                 margin-right: 50%;
                 }
@@ -683,6 +694,27 @@ font-weight: bold;
         margin:  5rem 2rem 0 1rem ;
 
     }
+
+
+
+.team-div .job{
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    padding:  0 30%;
+    text-align: center;
+    font-size: 110%;
+    opacity: 0;
+}
+   
+.team-div:hover .image{
+    opacity: 0.2;
+}
+.team-div:hover .job{
+    opacity: 1;
+}
+
     .role{
         font-weight: 400;
         font-size: 1.2rem;
@@ -711,7 +743,7 @@ font-weight: bold;
     }
     
     .mission-text {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     } 
 
     .obj-icon{
@@ -720,14 +752,13 @@ font-weight: bold;
     }
 
 
-   
-    }
+
     .represent{
         margin: 1rem 4rem 2rem 0;
     }
 
     .testimonial-text{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         padding: 0 3rem;
     }
     .gallery-div{
@@ -781,3 +812,12 @@ font-size: 1.8rem;}
 
 }
 
+
+/* Animations */
+.fade-in {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    -moz-animation: fadeIn ease 3s;
+    -o-animation: fadeIn ease 3s;
+    -ms-animation: fadeIn ease 3s;
+  }
