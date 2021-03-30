@@ -216,20 +216,25 @@ hr{
 
 .about .inner-div{
     margin: 0 10% 0 auto ;
+
 }
+
+#ReadMore p{
+    font-weight: 300;}
 
 .about p{
     padding:0 0 2rem 0;
     margin-top: 0;
 }
 
-.about .button{
+.read-more-btn{
     font-size: 1.25rem;
     color:gray;
     background-color: rgba(0,0,0,0.05);
     padding: 0 0;
     border: none;
 }
+
 
 .button:hover{
     color: #FF6700;
@@ -271,13 +276,6 @@ display: flex;
 }
 
 
-.team-div .job{
-    font-weight: 600;
-    font-size: 1rem;
-    margin: 0  2rem 0 0;
-    padding: 0 0 0 1rem;
-}
-
 .name{    
     font-size: 1.3rem;
     font-weight: 800;
@@ -290,6 +288,11 @@ display: flex;
     font-weight: 400;
     margin-left: 1rem;
 
+}
+
+.team-div .job{
+    font-size: 90%;
+    margin: 0 0 0 1rem;
 }
 
 /* Mission */
@@ -520,7 +523,7 @@ padding: 3rem 0rem;
 }
 
 .footer p{
-    font-size: 0.5rem;
+    font-size: 0.6rem;
 }
 
 /* Join Us Page */
@@ -551,6 +554,13 @@ font-size: 80%;
 .form a:hover{
     color: #FF6700;
 }
+
+.read-more-btn.form-readmore{
+    font-size: 1rem;
+    padding: 0 0;
+    margin: 0 0;
+}
+
 
 /* Redirect and Welcome Page */
 
@@ -697,16 +707,6 @@ height:auto;
 
 
 
-.team-div .job{
-    position: absolute;
-    top: 70%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    padding:  0 30%;
-    text-align: center;
-    font-size: 110%;
-    opacity: 0;
-}
    
 .team-div:hover .image{
     opacity: 0.2;
@@ -727,6 +727,24 @@ height:auto;
         margin:  0 0;
         padding: 0 0;
     
+    }
+
+
+    .team-div .job{
+        position:absolute;
+        z-index: 10;
+        padding:  0 2rem;
+        opacity: 0;
+        top: 50%;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+
+    .image-div{
+        position: relative; 
+        display:inline-block;
     }
     .mission-div{
         margin: 0 0;
