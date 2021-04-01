@@ -655,7 +655,7 @@ font-weight: bold;
   /* Header section */
 
     .header .heading{
-        font-size: 6.5vmax;
+        font-size: 6vmax;
     }
 
     .header .heading-div{
@@ -865,7 +865,10 @@ font-size: 1.8rem;}
     .header .header-image{
         background-position: -130px -30px;
     }
+    .header .flex-box{
+        margin-top: 8%;
 
+    }
     .about{
         background-size: contain;
         background-repeat: repeat-x;
