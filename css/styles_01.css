@@ -201,7 +201,7 @@ url(
     background-repeat: no-repeat;
     margin-top: 10rem;
     background-clip: border-box;
-
+    filter: brightness(80%);
     }
 
 hr{
@@ -865,6 +865,7 @@ font-size: 1.8rem;}
     }
     .header .flex-box{
         margin-top: 8%;
+        padding-top: 15%;
 
     }
     .about{
