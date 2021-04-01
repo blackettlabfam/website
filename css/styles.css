@@ -200,6 +200,8 @@ url(
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 10rem;
+    background-clip: border-box;
+
     }
 
 hr{
@@ -306,7 +308,6 @@ display: flex;
     margin: 0 0 4rem 0;
     white-space: normal;
     text-align: left;
-
 }
 
 .mission-icon  {
@@ -531,6 +532,7 @@ padding: 3rem 0rem;
     width: 100%;
     margin-bottom: 0rem;
     padding-bottom: 0;
+    padding-top: 15vh;
 }
 
 .form .heading{
@@ -716,10 +718,11 @@ height:auto;
         position: relative; 
         display:inline-block;
         object-fit: contain;
-        width: 11rem;
+        max-width: 10rem;
     }
     .image{
         width: 100%;
+        height: auto;
     }
 
 .team-div:hover .image{
@@ -750,17 +753,19 @@ height:auto;
         margin: 0 auto;
     }
 
-
-    .mission-div{
+    .mission-div, .mission-card{
         margin: 0 0;
-        padding: 0 0;
-
+    }
+    
+    .mission-card{
+        padding: 2rem 0;
     }
     .mission-icon{
-        width: 5rem;
-        padding: 1rem  0;
-        margin: 0 4rem 0 0;
+        min-width: 5rem;
+        height: auto;
+        margin: 0 2rem;
     }
+
     .mission-title{
         font-size: 1.6rem;
     }
@@ -772,12 +777,6 @@ height:auto;
     .obj-icon{
         width: 8rem;
         height: 9rem;
-    }
-
-
-
-    .represent{
-        margin: 1rem 4rem 2rem 0;
     }
 
     .testimonial-text{
@@ -844,3 +843,41 @@ font-size: 1.8rem;}
   }
 
 
+  /* Tablet */
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    #meet-the-team .flex-box{
+        display: block;
+        text-align: center;
+    }
+
+    .mission-icon{
+        padding: 2.5rem  0;
+
+    }
+    .name{
+        width: 100%;
+        margin: 2rem 0 0 0;
+        padding: 0 0;
+    }
+    .role{
+       width: 100%;
+       margin: 0 0;
+       padding: 0 0;
+    }
+
+    .image{
+        height: 200px;
+        width: auto;
+    }
+
+    .header .header-image{
+        background-position: -130px -30px;
+    }
+
+    .about{
+        background-size: contain;
+        background-repeat: repeat-x;
+    }
+
+}
