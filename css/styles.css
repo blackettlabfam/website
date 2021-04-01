@@ -716,9 +716,9 @@ height:auto;
     .image-div{
         position: relative; 
         display:inline-block;
-        object-fit: contain;
-        max-width: 10rem;
+        max-width: 11.2rem;
         min-width: 10rem;
+        min-height: 220px;
     }
     .image{
         width: 100%;
