@@ -562,9 +562,7 @@ font-size: 80%;
     margin: 0 0;
 }
 
-.redirect .heading{
-    margin-top: 5rem;
-}
+
 /* Redirect and Welcome Page */
 
 
@@ -644,7 +642,7 @@ font-weight: bold;
     body{padding-top: 10%;
     }
     .heading{
-        font-size: 5vmax;
+        font-size: 5rem;
         margin: 0 2rem 0 0;
         }
 
@@ -720,6 +718,7 @@ height:auto;
         display:inline-block;
         object-fit: contain;
         max-width: 10rem;
+        min-width: 10rem;
     }
     .image{
         width: 100%;
@@ -820,9 +819,7 @@ font-size: 1rem;}
   
 .find-us h3{
 font-size: 1.8rem;}
-.redirect{margin-top: 5rem;}
 }
-
 
 /* Animations */
 .fade-in {
@@ -873,5 +870,10 @@ font-size: 1.8rem;}
         background-size: contain;
         background-repeat: repeat-x;
     }
-
+    .heading{
+        font-size: 4rem;
+    }
+    .header .heading{
+        font-size: 7vmax;
+    }
 }
