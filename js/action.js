@@ -1,5 +1,5 @@
 function myFunction() {
-    var moreText = document.getElementById("readmore");
+    var moreText = document.getElementById("ReadMore");
     var moreBtnText = document.getElementById("MoreBtn");
     var lessBtnText = document.getElementById("LessBtn");
 
