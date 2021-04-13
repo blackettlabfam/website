@@ -114,7 +114,7 @@ h4, h5, h6, p{
 .navbar {
     overflow: hidden;
     background-color: rgba(0,0,0,0.9);
-    z-index: 1000000;
+    z-index: 100;
     padding: 0rem 2rem;
   }
   
@@ -549,10 +549,13 @@ font-weight: 400;
 font-size: 80%;
 }
 .form a{
-    margin: 0 0.5rem;
-    color: gray;
+    margin: 1rem 0;
+    color: white;
 }
 
+a.fb-link{
+font-size: 0.8rem;
+}
 .form a:hover{
     color: #FF6700;
 }
@@ -650,6 +653,13 @@ font-weight: bold;
             margin: 8rem 10% 0 auto;
   }
 
+  .shell.form{
+
+    padding-top: 15%;
+}
+
+
+
   /* Header section */
 
     .header .heading{
@@ -695,7 +705,9 @@ font-weight: bold;
 
     .maintext{font-size: 1.3rem;}
 
-
+    a.fb-link{
+        font-size: 1rem;
+        }
     .about{
             background-repeat: no-repeat;
         background-size:cover;
@@ -799,6 +811,7 @@ height:auto;
 
 
 .form .heading{
+    font-size: 6rem;
     margin-top: 5rem;
 }
 
@@ -873,9 +886,12 @@ font-size: 1.8rem;}
         background-repeat: repeat-x;
     }
     .heading{
-        font-size: 4rem;
+        font-size: 5rem;
     }
     .header .heading{
         font-size: 7vmax;
+    }
+    .form .heading{
+        font-size: 5rem;
     }
 }
