@@ -1,4 +1,4 @@
-function myFunction() {
+function toggleReadMore() {
     var moreText = document.getElementById("ReadMore");
     var moreBtnText = document.getElementById("MoreBtn");
     var lessBtnText = document.getElementById("LessBtn");
@@ -10,6 +10,6 @@ function myFunction() {
     } else {
       moreBtnText.style.display = "none";
       moreText.style.display = "inline";
-      lessBtnText.style.display = "inline"; 
+      lessBtnText.style.display = "inline";
     }
   }
