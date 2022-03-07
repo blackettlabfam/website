@@ -46,47 +46,48 @@ h4, h5, h6, p{
 }
 
 .device-box{
-    background-image: url('../images/graphic_device.png');
-    background-size: cover;
-    width: 25%;
-    height: 100%;
-    background-repeat: no-repeat;
-    position: absolute; /* or absolute */
-    top: 80rem;
-    right: 0px;
-    z-index: -1;
-
-}
-
-.device{
     overflow: hidden;
 }
 
-.device-box-mid{
+.device{
+    position: absolute; /* or absolute */
+    background-image: url('../images/graphic_device.png');
+    background-size: cover;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
+.device-1{
+    top: 90rem;
+    right: 0rem;
+    width: 20%;
+
+}
+
+.device-2{
     top: 130rem;
-    left:0;
+    left: 0rem;
     width: 20%;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
 
-.device-box-low{
-    top: 180rem;
-    right: 0px;
+.device-3{
+    top: 200rem;
+    right:0rem;
     width: 20%;
 
-    z-index: 0;
 }
 
-.device-box-cta{
+.device-4{
     top: 250rem;
-    left:0;
-    width: 30%;
+    left:0rem;
+    width: 20%;
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-    z-index: 0;
-}
 
+}
 /* State styling */
 .heading-div{
     margin: 6rem 10% 2rem 0rem;
@@ -340,10 +341,6 @@ margin: 1rem 2rem 2rem 0;
     margin-bottom: 0;
 }
 
-.mission-text {
-    font-size: 90%;
-} 
-
 
 /* Gallery */
 
@@ -374,7 +371,7 @@ margin: 1rem 2rem 2rem 0;
 }
 
 .carousel-indicators li{
-    background-color: black;
+    background-color: white;
     width: 10px;
     height: 10px;
     border-radius: 100%;
@@ -402,9 +399,23 @@ padding: 3rem 0rem;
     padding: 3rem 0;
 }
 
-.find-us h3{
-    font-weight: 400;
-    font-size: 1.3rem;
+.find-us h1{
+    font-weight: 800;
+}
+
+.partners-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 2rem;
+
+}
+.partner-logo{
+    width: 50%;
+    padding: 0 0 1rem 0;
+
+  
 }
  /* CTA */
 
@@ -782,9 +793,6 @@ height:auto;
         font-size: 1.6rem;
     }
     
-    .mission-text {
-        font-size: 1.2rem;
-    } 
 
     .obj-icon{
         width: 8rem;
@@ -795,9 +803,10 @@ height:auto;
         font-size: 1.2rem;
         padding: 0 3rem;
     }
-    .gallery-div{
-        padding: 8em 0rem 0 0rem;
-        }
+
+    .partner-logo{
+        padding: 0 0;
+    }
 
     .cta-div .inner{
         padding: 0rem 3rem 1rem 3rem;
