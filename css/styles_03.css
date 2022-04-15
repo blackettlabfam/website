@@ -1,0 +1,939 @@
+/* Base styling */
+h1, h2, h3{
+    font-family: 'Bebas Neue';
+}
+
+body{
+    font-family:  'Titillium Web', sans-serif;
+    text-align: center;
+    background-color:black;
+    color: white;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+img{
+    max-width: 100%;
+}
+
+h4, h5, h6, p{
+    font-weight: 600;
+    font-size: 1rem;
+
+}
+
+.maintext{
+    font-size: 1.1rem;
+    padding-bottom: 1.3rem;
+}
+
+.orange-text{
+    color: #FF6700;
+}
+
+.bold-text{
+    font-weight: 800;
+}
+
+/* Layout styling */
+
+.heading{
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0 2rem 0 0;  /* for the horizontal line underneath */
+    }
+
+.heading-div p{
+    margin-bottom: 1rem;}
+
+.shell{
+    text-align: left;
+    padding: 1rem 2rem;
+}
+
+.device-box{
+    overflow: hidden;
+}
+
+.device{
+    position: absolute; /* or absolute */
+    background-image: url('../images/graphic_device.png');
+    background-size: cover;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
+.device-1{
+    top: 90rem;
+    right: 0rem;
+    width: 20%;
+
+}
+
+.device-2{
+    top: 130rem;
+    left: 0rem;
+    width: 20%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.device-3{
+    top: 200rem;
+    right:0rem;
+    width: 20%;
+
+}
+
+.device-4{
+    top: 250rem;
+    left:0rem;
+    width: 20%;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+
+}
+/* State styling */
+.heading-div{
+    margin: 6rem 10% 2rem 0rem;
+    text-align: left;}
+
+.subtext{
+    font-weight: 400;
+}
+
+.center-div{
+    text-align: center;}
+     
+
+.hyperlink{
+    color: gray;
+
+}
+
+.hyperlink:hover{
+    color: #FF6700;
+}
+
+/* Navigation Bar */
+
+.navbar {
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 100;
+    padding: 0rem 2rem;
+  }
+  
+  /* Navbar links
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  } */
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+ .sticky {
+    position: fixed;
+    top: 0rem;
+    width: 100%;
+  }
+  
+.navbar-brand{
+    width: 5rem;
+    padding: 2rem 0;
+}
+
+.nav-item{
+    margin-right: 1rem;
+    font-size: 0.8rem;
+}
+
+.nav-line{
+    border-style: none solid none none;
+    border-width: 1px;
+    line-height: 1px;
+    margin-left: 2rem;
+    color: white;
+    display: inline;
+}
+
+.nav-icon{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.navbar-dark:hover .navbar-nav:hover .nav-link:hover{ 
+    color: #FF6700;
+}
+
+/* Removes the border around burger icon  */
+.custom-toggler.navbar-toggler {
+border-color:none;
+border:none;}
+
+.dropdown-menu{
+    background-color:inherit;
+}
+
+.dropdown-item{
+    background-color: inherit;
+    color:white;
+    font-size: 0.8rem;
+    margin: 0 0;
+}
+
+
+.dropdown-item:hover{
+    color:#FF6700;
+    background-color: inherit;
+}
+    
+/* Setting the stroke to green using rgb values (0, 128, 0) */
+    
+/* .custom-toggler 
+.navbar-toggler-icon {
+background-image: 
+url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(91, 67, 242, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+} */
+
+
+/* Title */
+
+.header .heading-div{
+    margin: 4rem 15% 0rem 2rem;
+
+}
+
+.header .heading{
+    font-size: 3.5rem;
+}
+
+.header .flex-box{
+    display: block;
+
+}
+.header-image{
+    width:100%;
+    height: 35vh;
+    background-image: url('../images/header.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 10rem;
+    background-clip: border-box;
+    filter: brightness(80%);
+    }
+
+hr{
+    width: 10rem;
+    height: 0.4rem;
+    margin: 1.5rem auto 3rem 0;
+    background-color: #FF6700;
+}
+
+/* About Us */
+
+.about{
+    background-image: url('../images/ramon-salinero.jpg');
+    background-size: contain;
+    background-repeat: repeat-x;
+    width: 100%;
+}
+
+.about .inner-div{
+    margin: 0 10% 0 auto ;
+
+}
+
+.about p{
+    padding:0 0 2rem 0;
+    margin-top: 0;
+}
+
+.read-more-btn{
+    font-size: 1.25rem;
+    color:gray;
+    background-color: rgba(0,0,0,0.05);
+    padding: 0 0;
+    border: none;
+}
+
+
+.button:hover{
+    color: #FF6700;
+}
+
+.btn:hover{
+    color: #FF6700;
+}
+
+#ReadMore{
+    display: none;
+}
+
+#LessBtn{
+    display: none;
+}
+
+/* Meet The Team */
+
+.mobile-only .float-div .image{
+margin-left: 0rem;
+}
+
+.web-only{
+    display: none;
+}
+.flex-box{
+display: flex;
+    text-align: left;
+    align-items:center;
+    margin: 3rem 0;
+}
+
+.image{
+    width: 8rem; 
+    margin:  0 0;
+    padding: 0 0;
+}
+
+
+.name{    
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 1rem 0 0 1rem;
+}
+
+
+.role{
+    font-size: 90%;
+    font-weight: 400;
+    margin-left: 1rem;
+
+}
+
+.team-div .job{
+    font-size: 90%;
+    margin: 0 0 0 1rem;
+}
+
+/* Mission */
+
+.mission-div{
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.mission-card{
+    margin: 0 0 4rem 0;
+    white-space: normal;
+    text-align: left;
+}
+
+.mission-icon  {
+    height: auto;
+float: left;    
+min-width: 4rem;
+max-width: 4rem;
+vertical-align: middle;
+margin: 1rem 2rem 2rem 0;
+}
+
+.obj-icon{
+    padding: 2.5rem 2rem;
+    width: 7.5rem;
+}
+
+.obj-div {
+    margin-bottom: 2rem;
+
+}
+
+
+.mission .heading-div h3{
+    font-family: Titillium Web;
+}
+
+.mission-title{
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+
+/* Gallery */
+
+.gallery{
+    background-color: white;
+    color: black;
+}
+
+.col-3{
+    flex: 0 0 0%;
+}
+.speech-icon{
+    width: 1rem;
+}
+
+.speech-icon-flip{
+    transform: scaleX(-1);
+}
+
+.testimonial-text{
+    font-family: Titillium Web;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.carousel-inner .container-fluid{
+    padding: 0 0rem 2rem 0rem;
+}
+
+.carousel-indicators li{
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+
+
+ol.carousel-indicators{
+    margin-bottom: 0;
+}
+
+.carousel-item em{
+    font-weight: 100;
+    color: gray;
+}
+
+.carousel-indicators .active{
+    background-color: #FF6700;
+}
+
+.curator-box{
+padding: 3rem 0rem;
+}
+
+.find-us{
+    padding: 3rem 0;
+}
+
+.find-us h1{
+    font-weight: 800;
+}
+
+.partners-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 2rem;
+
+}
+.partner-logo{
+    width: 50%;
+    padding: 0 0 1rem 0;
+
+  
+}
+ /* CTA */
+
+.cta-div .heading{
+    padding: 4rem 0 ;
+    margin: 0 0; }
+
+ .cta-outer{
+    width: 100%;
+ }
+
+.cta-div{
+     background-color: rgb(41, 41, 41);
+     height: 100%;
+     padding-bottom: 2rem;
+     bottom: 2rem;
+     overflow: hidden;
+     margin: 0 auto;
+     width: 80%;
+     z-index: 99;
+     position: relative;
+ }
+
+.cta-div .inner{
+     padding: 0rem 1rem 2rem 1em;
+ }
+
+.white-border-round{
+    border: 0.8px solid;
+    border-radius: 10px;
+    border-color: white;
+    width: 80px;
+    height: auto;
+    padding: 0.5rem 0rem;
+    margin: 2rem auto 0 auto;
+    position: relative;   
+}
+
+.popup-button {
+    cursor: pointer;
+  }
+
+.popup-button .popup-text {
+    visibility: hidden;
+    width: 90%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 1rem 1rem;
+    position: absolute;
+    font-size: 80%;
+    z-index: 101;
+    bottom: 69%;
+    left: 60%;
+    margin-left: -55%;
+  }
+
+.popup-button  .popup-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+  }
+
+  .popup-button .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+
+  .clickhere{
+      color: gray;
+  }
+
+  .clickhere:hover{
+      color: #FF6700;
+  }
+/* Footer */
+
+.footer{
+    color: white;
+    padding: 0 0;
+    margin-bottom: 2rem;
+}
+
+.white-border-round a{
+    color: white;
+}
+
+.white-border-round a:hover{
+    color: #FF6700;
+}
+
+.footer-icon{
+    margin: 2rem 1rem;
+    color: white;
+}
+
+.footer-icon:hover{
+    color: #FF6700;
+}
+
+.footer p{
+    font-size: 0.6rem;
+}
+
+/* Join Us Page */
+
+.shell.form{
+    width: 100%;
+    margin-bottom: 0rem;
+    padding-bottom: 0;
+    padding-top: 20%;
+}
+
+.form .heading{
+    margin-top: 5rem;
+}
+.form-group .paragraph{
+margin-bottom: 3rem;
+}
+
+
+.form-group .subtext{
+font-size: 80%;
+}
+.form a{
+    margin: 1rem 0;
+    color: white;
+}
+
+a.fb-link{
+font-size: 0.8rem;
+}
+.form a:hover{
+    color: #FF6700;
+}
+
+.read-more-btn.form-readmore{
+    font-size: 1rem;
+    padding: 0 0;
+    margin: 0 0;
+}
+
+
+/* Redirect and Welcome Page */
+
+
+.redirect-link{
+    font-size: 0.8rem;
+    list-style-position: outside;
+}
+
+ul{
+    list-style: inside;
+    list-style-type: square;
+}
+
+.redirect-links{
+    margin: 5% auto;
+    text-align: left;
+}
+
+.list-item{
+    margin: 2% auto;
+}
+
+.darkBox {
+margin: 5% auto 0 auto;
+padding: 5% 5%;
+max-width: 800px;
+background-color: black;
+border: white 1px;
+border-style: solid;
+border-radius: 5px;
+color: white;
+word-break: break-word;
+}
+
+textarea.darkBoxSubBox {
+background-color: white !important;
+color: darkgrey !important;
+margin: 1em 0;
+resize: none;
+}
+
+a.darkBoxLink:link, a.darkBoxLink:visited {
+color: #FF6700;
+text-decoration: none;
+}
+a.darkBoxLink:hover, a.darkBoxLink:active {
+color: #FF6700;
+text-decoration: underline;
+}
+
+ul.centreList {
+text-align: left;
+display: table;
+margin: 0 auto;
+list-style-position: outside;
+width: 80%;
+padding: 0 0;
+
+}
+
+.notice {
+color: #FF6700;
+font-weight: bold;
+}
+
+/* Other pages */ 
+
+.shell.intro{
+    width: 100%;
+    margin-bottom: 0rem;
+    padding-bottom: 0;
+    padding-top: 20%;
+}
+
+/* Responsiveness */
+
+/* Web */
+@media (min-width:768px){
+    .mobile-only{
+        display: none;
+    }
+
+    .web-only{
+        display: block;}
+
+
+    .heading{
+        font-size: 5rem;
+        margin: 0 2rem 0 0;
+        }
+
+    .heading-div{
+            margin: 8rem 10% 0 auto;
+  }
+
+  .shell.form{
+
+    padding-top: 15%;
+}
+
+
+
+  /* Header section */
+
+    .header .heading{
+        font-size: 6vmax;
+    }
+
+    .header .heading-div{
+        margin: auto 8% auto 4rem;
+    }
+
+    .header .flex-box{
+      margin: 10% 0 0 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .header-image{
+    width:100%;
+    height: 600px;
+    overflow:hidden;
+    margin-top: 0;
+    position: relative;
+    }
+
+    .navbar-brand{
+    width: 6rem;
+    margin: 0 0 0 2rem;
+    padding: 3rem 0;
+    }
+
+    .shell{
+    text-align: left;
+    padding: 4rem 4rem;
+    }
+
+    .flex-box{
+        padding-top: 5rem;
+    }
+
+    h4, h5, h6, p{
+        font-size: 1.2rem;}
+
+    .maintext{font-size: 1.3rem;}
+
+    a.fb-link{
+        font-size: 1rem;
+        }
+    .about{
+            background-repeat: no-repeat;
+        background-size:cover;
+        max-width: 100%;
+height:auto;
+        }
+        
+    .about .heading-div{
+                margin-right: 50%;
+                }
+     
+    .name{
+        font-size: 1.6rem;
+        margin:  5rem 2rem 0 1rem ;
+
+    }
+
+    .image-div{
+        position: relative; 
+        display:inline-block;
+        max-width: 11.2rem;
+        min-width: 10rem;
+        min-height: 220px;
+    }
+    .image{
+        width: 100%;
+        height: auto;
+    }
+
+.team-div:hover .image{
+    opacity: 0.2;
+}
+.team-div:hover .job{
+    opacity: 1;
+}
+
+    .role{
+        font-weight: 400;
+        font-size: 1.2rem;
+        margin: 0  2rem 0 0;
+        padding: 0 0 0 1rem;
+    
+    }
+
+    .team-div .job{
+        position:absolute;
+        z-index: 10;
+        width: 100%;
+        padding:  0 2rem;
+        opacity: 0;
+        top: 50%;
+        text-align: center;
+        font-weight: 600;
+        font-size: 1rem;
+        margin: 0 auto;
+    }
+
+    .mission-div, .mission-card{
+        margin: 0 0;
+    }
+    
+    .mission-card{
+        padding: 2rem 0;
+    }
+    .mission-icon{
+        min-width: 5rem;
+        height: auto;
+        margin: 0 2rem;
+    }
+
+    .mission-title{
+        font-size: 1.6rem;
+    }
+    
+
+    .obj-icon{
+        width: 8rem;
+        height: 9rem;
+    }
+
+    .testimonial-text{
+        font-size: 1.2rem;
+        padding: 0 3rem;
+    }
+
+    .partner-logo{
+        padding: 0 0;
+    }
+
+    .cta-div .inner{
+        padding: 0rem 3rem 1rem 3rem;
+    }
+
+    .add-seperator{
+        border-style: none solid none none;
+        border-color: white;
+        border-width: 2px;
+    }
+
+
+.form .heading{
+    font-size: 6rem;
+    margin-top: 5rem;
+}
+
+.form-group .paragraph{
+margin-bottom: 3rem;
+}
+
+.form-group .subtext{
+font-size: 1rem;}
+
+
+.popup-button .popup-text {
+   font-size: 1rem;
+   bottom: 110%;
+   left: 63%;
+   width: 85%;
+  }
+
+  
+.find-us h3{
+font-size: 1.8rem;}
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    -moz-animation: fadeIn ease 3s;
+    -o-animation: fadeIn ease 3s;
+    -ms-animation: fadeIn ease 3s;
+  }
+
+
+  /* Tablet */
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    #meet-the-team .flex-box{
+        display: block;
+        text-align: center;
+    }
+
+    .mission-icon{
+        padding: 2.5rem  0;
+
+    }
+    .name{
+        width: 100%;
+        margin: 2rem 0 0 0;
+        padding: 0 0;
+    }
+    .role{
+       width: 100%;
+       margin: 0 0;
+       padding: 0 0;
+    }
+
+    .image{
+        height: 200px;
+        width: auto;
+    }
+
+    .header .header-image{
+        background-position: -130px -30px;
+    }
+    .header .flex-box{
+        margin-top: 8%;
+        padding-top: 15%;
+
+    }
+    .about{
+        background-size: contain;
+        background-repeat: repeat-x;
+    }
+    .heading{
+        font-size: 5rem;
+    }
+    .header .heading{
+        font-size: 7vmax;
+    }
+    .form .heading{
+        font-size: 5rem;
+    }
+}

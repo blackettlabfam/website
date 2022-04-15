@@ -252,6 +252,11 @@ cookiesCheckbox.addEventListener("change",(e) => {
 
 form.addEventListener("change",(e) => updateFormCode());
 
+document.getElementById('hasFacebookAccount').onchange = function() {
+  document.getElementById('fbname').disabled = this.checked;
+  filter="opacity(35%)";
+};
+
 document.querySelector("#copyData").addEventListener("click",(e) => {
   var dataBox=document.querySelector("#dataBox");
   dataBox.select();
