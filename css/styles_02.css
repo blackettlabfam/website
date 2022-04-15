@@ -29,6 +29,14 @@ h4, h5, h6, p{
     padding-bottom: 1.3rem;
 }
 
+.orange-text{
+    color: #FF6700;
+}
+
+.bold-text{
+    font-weight: 800;
+}
+
 /* Layout styling */
 
 .heading{
@@ -168,6 +176,23 @@ h4, h5, h6, p{
 .custom-toggler.navbar-toggler {
 border-color:none;
 border:none;}
+
+.dropdown-menu{
+    background-color:inherit;
+}
+
+.dropdown-item{
+    background-color: inherit;
+    color:white;
+    font-size: 0.8rem;
+    margin: 0 0;
+}
+
+
+.dropdown-item:hover{
+    color:#FF6700;
+    background-color: inherit;
+}
     
 /* Setting the stroke to green using rgb values (0, 128, 0) */
     
@@ -555,8 +580,7 @@ margin-bottom: 3rem;
 }
 
 
-.form-group .subparagraph{
-font-weight: 400;    
+.form-group .subtext{
 font-size: 80%;
 }
 .form a{
@@ -641,6 +665,15 @@ padding: 0 0;
 .notice {
 color: #FF6700;
 font-weight: bold;
+}
+
+/* Other pages */ 
+
+.shell.intro{
+    width: 100%;
+    margin-bottom: 0rem;
+    padding-bottom: 0;
+    padding-top: 20%;
 }
 
 /* Responsiveness */
@@ -828,7 +861,7 @@ height:auto;
 margin-bottom: 3rem;
 }
 
-.form-group .subparagraph{
+.form-group .subtext{
 font-size: 1rem;}
 
 
