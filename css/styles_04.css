@@ -420,12 +420,8 @@ ol.carousel-indicators{
 padding: 3rem 0rem;
 }
 
-.find-us{
+.filler{
     padding: 3rem 0;
-}
-
-.find-us h1{
-    font-weight: 800;
 }
 
 .partners-div{
@@ -863,9 +859,6 @@ font-size: 1rem;}
    width: 85%;
   }
 
-  
-.find-us h3{
-font-size: 1.8rem;}
 }
 
 /* Animations */
