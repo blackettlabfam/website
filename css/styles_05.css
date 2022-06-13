@@ -420,23 +420,18 @@ ol.carousel-indicators{
 padding: 3rem 0rem;
 }
 
-.filler{
-    padding: 3rem 0;
-}
+
 
 .partners-div{
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 
 }
 .partner-logo{
-    width: 50%;
-    padding: 0 0 1rem 0;
-
-  
+    width: 40%;
 }
  /* CTA */
 
@@ -824,8 +819,9 @@ height:auto;
         padding: 0 3rem;
     }
 
+
     .partner-logo{
-        padding: 0 0;
+        width: 50%;
     }
 
     .cta-div .inner{
@@ -920,4 +916,13 @@ font-size: 1rem;}
     .form .heading{
         font-size: 5rem;
     }
+
+    .partner-logo{
+        width: 80%;
+    }
+
+    .partners-div{
+        padding-bottom: 2rem;
+    }
+
 }
