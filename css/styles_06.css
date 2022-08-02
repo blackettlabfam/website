@@ -273,6 +273,15 @@ hr{
     color: #FF6700;
 }
 
+.donate-btn{
+    background-color: black;
+    border-color: white;
+    border: solid 1pt;
+}
+
+.donate-btn:hover{
+    background-color: white;
+}
 #ReadMore{
     display: none;
 }
