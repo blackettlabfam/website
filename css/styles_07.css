@@ -721,6 +721,10 @@ font-weight: bold;
 #rp2023 .heading{
         margin-bottom: 2rem;
         }
+
+#rp2023 ul{
+ list-style-position: outside;
+}
 /* Responsiveness */
 
 /* Web */
