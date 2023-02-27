@@ -160,6 +160,7 @@ h4, h5, h6, p{
 
 .nav-item{
     margin-right: 1rem;
+    margin-left: .5rem;
     font-size: 0.8rem;
 }
 
@@ -720,7 +721,7 @@ font-weight: bold;
 }
 
 #rp2023 .d-flex{
-    padding: 10%;
+    padding: 10% 8%;
     }
 
 #rp2023 .heading{
@@ -731,6 +732,10 @@ font-weight: bold;
  list-style-position: outside;
 }
 
+#faqs .btn{
+    padding-left:0;
+    text-align: left;
+}
 /* Responsiveness */
 
 /* Web */
@@ -745,7 +750,6 @@ font-weight: bold;
 
     .heading{
         font-size: 5rem;
-        margin: 0 2rem 0 0;
         }
 
     .heading-div{
@@ -798,6 +802,10 @@ font-weight: bold;
     width: 6rem;
     margin: 0 0 0 2rem;
     padding: 3rem 0;
+    }
+
+    .nav-item{
+        margin-left: 0;
     }
 
     .shell{
@@ -940,6 +948,7 @@ font-size: 1rem;}
   
 .find-us h3{
 font-size: 1.8rem;}
+
 #rp2023 .header .heading{
 position: absolute; 
 top: 40%;
@@ -948,6 +957,10 @@ left: 60px;
 
 #rp2023 .d-flex{
 padding: 5% 20%;
+}
+
+#faqs .btn{
+    text-align: center;
 }
 
 }
