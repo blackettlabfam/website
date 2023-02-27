@@ -5,7 +5,6 @@ h1, h2, h3{
 
 body{
     font-family:  'Titillium Web', sans-serif;
-    text-align: center;
     background-color:black;
     color: white;
 }
@@ -33,24 +32,34 @@ h4, h5, h6, p{
     color: #FF6700;
 }
 
-.bold-text{
-    font-weight: 800;
+.grey-text{
+    color: gray;
 }
+
 
 /* Layout styling */
 
 .heading{
     font-size: 3rem;
     font-weight: 800;
-    margin: 0 2rem 0 0;  /* for the horizontal line underneath */
+    margin-bottom: 2rem;  /* for the horizontal line underneath */
     }
 
 .heading-div p{
     margin-bottom: 1rem;}
 
+.white-div{
+    background-color: white;
+    color: black;
+}
+
 .shell{
     text-align: left;
     padding: 1rem 2rem;
+}
+
+.row{
+    padding-bottom: 5%;
 }
 
 .device-box{
@@ -124,7 +133,7 @@ h4, h5, h6, p{
     overflow: hidden;
     background-color: rgba(0,0,0,0.9);
     z-index: 100;
-    padding: 0rem 2rem;
+    padding: 0 2rem;
   }
   
   /* Navbar links
@@ -151,6 +160,7 @@ h4, h5, h6, p{
 
 .nav-item{
     margin-right: 1rem;
+    margin-left: .5rem;
     font-size: 0.8rem;
 }
 
@@ -194,6 +204,11 @@ border:none;}
     background-color: inherit;
 }
     
+
+.donate-btn{
+    margin-bottom: 2rem;
+  }
+
 /* Setting the stroke to green using rgb values (0, 128, 0) */
     
 /* .custom-toggler 
@@ -264,13 +279,26 @@ hr{
     border: none;
 }
 
-
-.button:hover{
+.btn:hover{
     color: #FF6700;
 }
 
-.btn:hover{
-    color: #FF6700;
+.btn-dark{
+    border-color: white;
+    border: solid 1pt;
+}
+
+.btn-dark:hover{
+    background-color: white;
+}
+
+.black-btn{
+    background-color: black;
+}
+
+.orange-btn{
+    background-color: #FF6700;
+    border-color: white;
 }
 
 .donate-btn{
@@ -282,6 +310,11 @@ hr{
 .donate-btn:hover{
     background-color: white;
 }
+
+.btn .subtext{
+    color: white;
+}
+
 #ReadMore{
     display: none;
 }
@@ -360,7 +393,8 @@ margin: 1rem 2rem 2rem 0;
 }
 
 .obj-div {
-    margin-bottom: 2rem;
+    margin-bottom: 25px;
+    align-items: center;
 
 }
 
@@ -377,11 +411,6 @@ margin: 1rem 2rem 2rem 0;
 
 
 /* Gallery */
-
-.gallery{
-    background-color: white;
-    color: black;
-}
 
 .col-3{
     flex: 0 0 0%;
@@ -540,6 +569,7 @@ padding: 3rem 0rem;
     color: white;
     padding: 0 0;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .white-border-round a{
@@ -667,6 +697,45 @@ color: #FF6700;
 font-weight: bold;
 }
 
+/* Event Page */
+
+.event .heading{
+    margin-top: 5rem;
+    /* background-image: url('../images/rp-image.png');
+    background-size: cover; */
+}
+
+#rp2023 .header{
+   padding-top: 10rem;
+   margin-left: 10rem;
+}
+ 
+#rp2023 .header .img-fluid{
+    max-height: 600px;
+ }
+  
+#rp2023 .header .heading{
+    position: absolute; 
+    top: 200px;
+    left: 40px;
+}
+
+#rp2023 .d-flex{
+    padding: 10% 8%;
+    }
+
+#rp2023 .heading{
+        margin-bottom: 2rem;
+        }
+
+#rp2023 ul{
+ list-style-position: outside;
+}
+
+#faqs .btn{
+    padding-left:0;
+    text-align: left;
+}
 /* Responsiveness */
 
 /* Web */
@@ -681,7 +750,6 @@ font-weight: bold;
 
     .heading{
         font-size: 5rem;
-        margin: 0 2rem 0 0;
         }
 
     .heading-div{
@@ -694,6 +762,16 @@ font-weight: bold;
 }
 
 
+.shell.event{
+
+    padding-top: 15%;
+}
+
+/* Navbar */
+
+.donate-btn{
+    margin-bottom: 0;
+  }
 
   /* Header section */
 
@@ -724,6 +802,10 @@ font-weight: bold;
     width: 6rem;
     margin: 0 0 0 2rem;
     padding: 3rem 0;
+    }
+
+    .nav-item{
+        margin-left: 0;
     }
 
     .shell{
@@ -863,6 +945,23 @@ font-size: 1rem;}
    left: 63%;
    width: 85%;
   }
+  
+.find-us h3{
+font-size: 1.8rem;}
+
+#rp2023 .header .heading{
+position: absolute; 
+top: 40%;
+left: 60px;
+}
+
+#rp2023 .d-flex{
+padding: 5% 20%;
+}
+
+#faqs .btn{
+    text-align: center;
+}
 
 }
 
@@ -875,8 +974,9 @@ font-size: 1rem;}
     -ms-animation: fadeIn ease 3s;
   }
 
+ 
 
-  /* Tablet */
+  /* Tablet Only */
 
 @media (min-width: 768px) and (max-width: 1200px) {
     #meet-the-team .flex-box{
@@ -934,4 +1034,86 @@ font-size: 1rem;}
         padding-bottom: 2rem;
     }
 
+}
+
+/* Timeline for RP2023 */
+
+.timeline {
+    border-left: 3px solid #FF6700;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    line-height: 1.4em;
+    padding: 50px;
+    list-style: none;
+    text-align: left;
+    max-width:100%;
+    margin-left: 45%;
+}
+
+@media (max-width: 767px) {
+    .timeline {
+        max-width: 98%;
+        padding: 25px;
+        margin-left: 0;
+    }
+}
+
+
+.timeline .event {
+    padding-bottom: 35px;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .timeline .event {
+        padding-top: 25px;
+        padding-bottom: 20px;
+
+    }
+}
+
+.timeline .event:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.timeline .event:before,
+.timeline .event:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline .event:before {
+    left: -207px;
+    content: attr(data-date);
+    text-align: right;
+    font-weight: 500;
+    min-width: 120px;
+}
+
+@media (max-width: 767px) {
+    .timeline .event:before {
+        left: 0px;
+        text-align: left;
+    }
+}
+
+.timeline .event:after {
+    -webkit-box-shadow: 0 0 0 3px #FF6700;
+    box-shadow: 0 0 0 3px #FF6700;
+    left: -55.8px;
+    background: white;
+    border-radius: 50%;
+    height: 9px;
+    width: 9px;
+    content: "";
+    top: 5px;
+}
+
+@media (max-width: 767px) {
+    .timeline .event:after {
+        left: -31.8px;
+    }
 }
