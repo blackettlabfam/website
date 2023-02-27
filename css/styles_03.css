@@ -5,7 +5,6 @@ h1, h2, h3{
 
 body{
     font-family:  'Titillium Web', sans-serif;
-    text-align: center;
     background-color:black;
     color: white;
 }
@@ -33,24 +32,34 @@ h4, h5, h6, p{
     color: #FF6700;
 }
 
-.bold-text{
-    font-weight: 800;
+.grey-text{
+    color: gray;
 }
+
 
 /* Layout styling */
 
 .heading{
     font-size: 3rem;
     font-weight: 800;
-    margin: 0 2rem 0 0;  /* for the horizontal line underneath */
+    margin-bottom: 2rem;  /* for the horizontal line underneath */
     }
 
 .heading-div p{
     margin-bottom: 1rem;}
 
+.white-div{
+    background-color: white;
+    color: black;
+}
+
 .shell{
     text-align: left;
     padding: 1rem 2rem;
+}
+
+.row{
+    padding-bottom: 5%;
 }
 
 .device-box{
@@ -124,7 +133,7 @@ h4, h5, h6, p{
     overflow: hidden;
     background-color: rgba(0,0,0,0.9);
     z-index: 100;
-    padding: 0rem 2rem;
+    padding: 0 2rem;
   }
   
   /* Navbar links
@@ -194,6 +203,11 @@ border:none;}
     background-color: inherit;
 }
     
+
+.donate-btn{
+    margin-bottom: 2rem;
+  }
+
 /* Setting the stroke to green using rgb values (0, 128, 0) */
     
 /* .custom-toggler 
@@ -264,13 +278,26 @@ hr{
     border: none;
 }
 
-
-.button:hover{
+.btn:hover{
     color: #FF6700;
 }
 
-.btn:hover{
-    color: #FF6700;
+.btn-dark{
+    border-color: white;
+    border: solid 1pt;
+}
+
+.btn-dark:hover{
+    background-color: white;
+}
+
+.black-btn{
+    background-color: black;
+}
+
+.orange-btn{
+    background-color: #FF6700;
+    border-color: white;
 }
 
 #ReadMore{
@@ -351,7 +378,8 @@ margin: 1rem 2rem 2rem 0;
 }
 
 .obj-div {
-    margin-bottom: 2rem;
+    margin-bottom: 25px;
+    align-items: center;
 
 }
 
@@ -368,11 +396,6 @@ margin: 1rem 2rem 2rem 0;
 
 
 /* Gallery */
-
-.gallery{
-    background-color: white;
-    color: black;
-}
 
 .col-3{
     flex: 0 0 0%;
@@ -540,6 +563,7 @@ padding: 3rem 0rem;
     color: white;
     padding: 0 0;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .white-border-round a{
@@ -667,6 +691,36 @@ color: #FF6700;
 font-weight: bold;
 }
 
+/* Event Page */
+
+.event .heading{
+    margin-top: 5rem;
+    /* background-image: url('../images/rp-image.png');
+    background-size: cover; */
+}
+
+#rp2023 .header{
+   padding-top: 10rem;
+   margin-left: 10rem;
+}
+ 
+#rp2023 .header .img-fluid{
+    max-height: 600px;
+ }
+  
+#rp2023 .header .heading{
+    position: absolute; 
+    top: 200px;
+    left: 40px;
+}
+
+#rp2023 .d-flex{
+    padding: 10%;
+    }
+
+#rp2023 .heading{
+        margin-bottom: 2rem;
+        }
 /* Responsiveness */
 
 /* Web */
@@ -694,6 +748,16 @@ font-weight: bold;
 }
 
 
+.shell.event{
+
+    padding-top: 15%;
+}
+
+/* Navbar */
+
+.donate-btn{
+    margin-bottom: 0;
+  }
 
   /* Header section */
 
@@ -866,6 +930,15 @@ font-size: 1rem;}
   
 .find-us h3{
 font-size: 1.8rem;}
+#rp2023 .header .heading{
+position: absolute; 
+top: 40%;
+left: 60px;
+}
+
+#rp2023 .d-flex{
+padding: 5% 20%;
+}
 }
 
 /* Animations */
@@ -877,8 +950,9 @@ font-size: 1.8rem;}
     -ms-animation: fadeIn ease 3s;
   }
 
+ 
 
-  /* Tablet */
+  /* Tablet Only */
 
 @media (min-width: 768px) and (max-width: 1200px) {
     #meet-the-team .flex-box{
