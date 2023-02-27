@@ -309,6 +309,11 @@ hr{
 .donate-btn:hover{
     background-color: white;
 }
+
+.btn .subtext{
+    color: white;
+}
+
 #ReadMore{
     display: none;
 }
@@ -725,6 +730,7 @@ font-weight: bold;
 #rp2023 ul{
  list-style-position: outside;
 }
+
 /* Responsiveness */
 
 /* Web */
@@ -931,8 +937,6 @@ font-size: 1rem;}
    left: 63%;
    width: 85%;
   }
-
-<<<<<<<< HEAD:css/styles_07.css
   
 .find-us h3{
 font-size: 1.8rem;}
@@ -945,8 +949,7 @@ left: 60px;
 #rp2023 .d-flex{
 padding: 5% 20%;
 }
-========
->>>>>>>> d1190a0032a3e55f8fa0084f0227032a9982a86d:css/styles_06.css
+
 }
 
 /* Animations */
@@ -1018,4 +1021,86 @@ padding: 5% 20%;
         padding-bottom: 2rem;
     }
 
+}
+
+/* Timeline for RP2023 */
+
+.timeline {
+    border-left: 3px solid #FF6700;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    line-height: 1.4em;
+    padding: 50px;
+    list-style: none;
+    text-align: left;
+    max-width:100%;
+    margin-left: 45%;
+}
+
+@media (max-width: 767px) {
+    .timeline {
+        max-width: 98%;
+        padding: 25px;
+        margin-left: 0;
+    }
+}
+
+
+.timeline .event {
+    padding-bottom: 35px;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .timeline .event {
+        padding-top: 25px;
+        padding-bottom: 20px;
+
+    }
+}
+
+.timeline .event:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border: none;
+}
+
+.timeline .event:before,
+.timeline .event:after {
+    position: absolute;
+    display: block;
+    top: 0;
+}
+
+.timeline .event:before {
+    left: -207px;
+    content: attr(data-date);
+    text-align: right;
+    font-weight: 500;
+    min-width: 120px;
+}
+
+@media (max-width: 767px) {
+    .timeline .event:before {
+        left: 0px;
+        text-align: left;
+    }
+}
+
+.timeline .event:after {
+    -webkit-box-shadow: 0 0 0 3px #FF6700;
+    box-shadow: 0 0 0 3px #FF6700;
+    left: -55.8px;
+    background: white;
+    border-radius: 50%;
+    height: 9px;
+    width: 9px;
+    content: "";
+    top: 5px;
+}
+
+@media (max-width: 767px) {
+    .timeline .event:after {
+        left: -31.8px;
+    }
 }
