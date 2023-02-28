@@ -1012,6 +1012,12 @@ padding: 5% 20%;
         padding: 2.5rem  0;
 
     }
+
+
+    .donate-btn{
+        margin-bottom: 2rem;
+    }
+  
     .name{
         width: 100%;
         margin: 2rem 0 0 0;
@@ -1036,6 +1042,11 @@ padding: 5% 20%;
         padding-top: 15%;
 
     }
+
+        .nav-item{
+        margin-left: 1rem;
+    }
+
     .about{
         background-size: contain;
         background-repeat: repeat-x;
@@ -1058,6 +1069,7 @@ padding: 5% 20%;
         padding-bottom: 2rem;
     }
 
+    
     #rp2023 .header{
         padding-top: 5rem;
         margin-left: 5rem;
@@ -1075,7 +1087,7 @@ padding: 5% 20%;
      }
 
      #sponsors .heading{
-        font-size: 3em;
+        font-size: 3rem;
     }
     
 }
