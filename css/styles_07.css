@@ -707,26 +707,28 @@ font-weight: bold;
 
 #rp2023 .header{
    padding-top: 10rem;
-   margin-left: 10rem;
+   margin-left: 5rem;
 }
  
 #rp2023 .header .img-fluid{
     max-height: 600px;
+    padding-top: 15%;
  }
   
 #rp2023 .header .heading{
     position: absolute; 
-    top: 200px;
-    left: 40px;
+    top: 10rem;
+    left: 2rem;
 }
+
+#rp2023 .heading{
+    margin-bottom: 2rem;
+    }
 
 #rp2023 .d-flex{
     padding: 10% 8%;
     }
 
-#rp2023 .heading{
-        margin-bottom: 2rem;
-        }
 
 #rp2023 ul{
  list-style-position: outside;
@@ -916,7 +918,7 @@ height:auto;
     }
 
     .cta-div .inner{
-        padding: 0rem 3rem 1rem 3rem;
+        padding: 0rem 3rem 0rem 3rem;
     }
 
     .add-seperator{
@@ -949,11 +951,22 @@ font-size: 1rem;}
 .find-us h3{
 font-size: 1.8rem;}
 
-#rp2023 .header .heading{
-position: absolute; 
-top: 40%;
-left: 60px;
-}
+#rp2023 .header{
+    padding-top: 5rem;
+    margin-left: 50rem;
+ }
+  
+ #rp2023 .header .img-fluid{
+     max-height: 800px;
+     padding-top: 5%;
+  }
+   
+ #rp2023 .header .heading{
+     position: absolute; 
+     top: 15rem;
+     left: 4rem;
+ }
+
 
 #rp2023 .d-flex{
 padding: 5% 20%;
@@ -1033,6 +1046,22 @@ padding: 5% 20%;
     .partners-div{
         padding-bottom: 2rem;
     }
+
+    #rp2023 .header{
+        padding-top: 5rem;
+        margin-left: 5rem;
+     }
+      
+     #rp2023 .header .img-fluid{
+         max-height: 800px;
+         padding-top: 5%;
+      }
+       
+     #rp2023 .header .heading{
+         position: absolute; 
+         top: 20rem;
+         left: 4rem;
+     }
 
 }
 
