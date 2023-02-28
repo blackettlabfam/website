@@ -712,12 +712,12 @@ font-weight: bold;
  
 #rp2023 .header .img-fluid{
     max-height: 600px;
-    padding-top: 15%;
+    padding-top: 10%;
  }
   
 #rp2023 .header .heading{
     position: absolute; 
-    top: 10rem;
+    top: 25%;
     left: 2rem;
 }
 
@@ -738,9 +738,14 @@ font-weight: bold;
     padding-left:0;
     text-align: left;
 }
+
+#sponsors .heading{
+    font-size: 2em;
+}
+
 /* Responsiveness */
 
-/* Web */
+/* Tablet & Web */
 @media (min-width:768px){
     .mobile-only{
         display: none;
@@ -952,8 +957,9 @@ font-size: 1rem;}
 font-size: 1.8rem;}
 
 #rp2023 .header{
-    padding-top: 5rem;
+    padding-top: 10rem;
     margin-left: 50rem;
+
  }
   
  #rp2023 .header .img-fluid{
@@ -974,6 +980,11 @@ padding: 5% 20%;
 
 #faqs .btn{
     text-align: center;
+}
+
+
+#sponsors .heading{
+    font-size: 3em;
 }
 
 }
@@ -1063,6 +1074,10 @@ padding: 5% 20%;
          left: 4rem;
      }
 
+     #sponsors .heading{
+        font-size: 3em;
+    }
+    
 }
 
 /* Timeline for RP2023 */
