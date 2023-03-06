@@ -593,6 +593,10 @@ padding: 3rem 0rem;
     font-size: 0.6rem;
 }
 
+.footer .hyperlink{
+    color:white
+}
+
 /* Join Us Page */
 
 .shell.form{
