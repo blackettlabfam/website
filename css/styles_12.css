@@ -711,36 +711,38 @@ font-weight: bold;
     background-size: cover; */
 }
 
-#rp2023 .header{
+.rp-page .header{
    padding-top: 10rem;
    margin-left: 5rem;
 }
  
-#rp2023 .header .img-fluid{
-    max-height: 600px;
+.rp-page .header .img-fluid{
+    padding-right: 0;
+    width: 600px;   
+    max-height: 50px;
     padding-top: 10%;
  }
   
-#rp2023 .header .heading{
+.rp-page .header .heading{
     position: absolute; 
     top: 25%;
     left: 2rem;
 }
 
-#rp2023 .heading{
+.rp-page .heading{
     margin-bottom: 2rem;
     }
 
-#rp2023 .d-flex{
+.rp-page .d-flex{
     padding: 10% 8%;
     }
 
 
-#rp2023 ul{
+.rp-page ul{
  list-style-position: outside;
 }
 
-#rp2023 .img-responsive{
+.rp-page .img-responsive{
     margin-bottom: 5%;
    }
    
@@ -967,37 +969,37 @@ font-size: 1rem;}
 .find-us h3{
 font-size: 1.8rem;}
 
-#rp2023 .header{
+.rp-page .header{
     padding-top: 10rem;
     margin-left: 50rem;
 
  }
 
- #rp2023 .img-responsive{
+ .rp-page .img-responsive{
     margin-bottom: 0%;
    }
   
 
-#rp2023 .img-rocket{
+.rp-page .img-rocket{
     margin-bottom: 5%;
 }
- #rp2023 .header .img-fluid{
+ .rp-page .header .img-fluid{
      max-height: 800px;
      padding-top: 5%;
   }
    
- #rp2023 .header .heading{
+ .rp-page .header .heading{
      position: absolute; 
      top: 15rem;
      left: 4rem;
  }
 
 
-#rp2023 .d-flex{
+.rp-page .d-flex{
 padding: 5% 15%;
 }
 
-#rp2023 .img-div{
+.rp-page .img-div{
    padding-bottom: 5%;
    width: 50rem;
     }
@@ -1095,17 +1097,17 @@ padding: 5% 15%;
     }
 
     
-    #rp2023 .header{
+    .rp-page .header{
         padding-top: 5rem;
         margin-left: 5rem;
      }
       
-     #rp2023 .header .img-fluid{
+     .rp-page .header .img-fluid{
          max-height: 800px;
          padding-top: 5%;
       }
        
-     #rp2023 .header .heading{
+     .rp-page .header .heading{
          position: absolute; 
          top: 20rem;
          left: 4rem;
@@ -1117,7 +1119,7 @@ padding: 5% 15%;
     
 }
 
-/* Timeline for RP2023 */
+/* Timeline for Representing Physics */
 
 .timeline {
     border-left: 3px solid #FF6700;
