@@ -717,9 +717,7 @@ font-weight: bold;
 }
  
 .rp-page .header .img-fluid{
-    padding-right: 0;
-    width: 600px;   
-    max-height: 50px;
+    width: 90%;
     padding-top: 10%;
  }
   
