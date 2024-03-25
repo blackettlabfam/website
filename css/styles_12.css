@@ -713,22 +713,25 @@ font-weight: bold;
 
 .rp-page .header{
    padding-top: 10rem;
-   margin-left: 5rem;
-}
- 
-.rp-page .header .img-fluid{
-    width: 90%;
-    padding-top: 10%;
- }
-  
-.rp-page .header .heading{
-    position: absolute; 
-    top: 25%;
-    left: 2rem;
+   /* margin-bottom: 5rem; */
+   margin-left: 2rem;
 }
 
+.rp-page .header .heading{
+
+    margin-left: 0rem;
+ }
+.rp-page .header .img-fluid{
+    position: absolute;
+    top: 8rem;
+    width: 200%;
+    left: 0rem;
+    z-index: -1;
+ }
+
+
 .rp-page .heading{
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     }
 
 .rp-page .d-flex{
@@ -737,7 +740,7 @@ font-weight: bold;
 
 
 .rp-page ul{
- list-style-position: outside;
+ list-style-position: inside;
 }
 
 .rp-page .img-responsive{
@@ -968,29 +971,22 @@ font-size: 1rem;}
 font-size: 1.8rem;}
 
 .rp-page .header{
-    padding-top: 10rem;
-    margin-left: 50rem;
-
+    padding-top: 15rem;
+    margin-left: 5rem;
+    margin-bottom: 5rem;
  }
 
- .rp-page .img-responsive{
-    margin-bottom: 0%;
-   }
-  
+ .rp-page .header .img-fluid{
+    top: 0rem;
+ }
+
+.rp-page .img-responsive{
+margin-bottom: 0%;
+}
 
 .rp-page .img-rocket{
     margin-bottom: 5%;
 }
- .rp-page .header .img-fluid{
-     max-height: 800px;
-     padding-top: 5%;
-  }
-   
- .rp-page .header .heading{
-     position: absolute; 
-     top: 15rem;
-     left: 4rem;
- }
 
 
 .rp-page .d-flex{
@@ -1096,21 +1092,14 @@ padding: 5% 15%;
 
     
     .rp-page .header{
-        padding-top: 5rem;
-        margin-left: 5rem;
+        margin-left: 4rem;
+        margin-bottom: 0rem;
      }
       
      .rp-page .header .img-fluid{
-         max-height: 800px;
-         padding-top: 5%;
+         top: 5rem;
       }
        
-     .rp-page .header .heading{
-         position: absolute; 
-         top: 20rem;
-         left: 4rem;
-     }
-
      #sponsors .heading{
         font-size: 3rem;
     }
