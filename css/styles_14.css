@@ -713,26 +713,24 @@ font-weight: bold;
 
 .rp-page .header{
    padding-top: 10rem;
-   /* margin-bottom: 5rem; */
    margin-left: 2rem;
 }
 
 .rp-page .header .heading{
-    
+    font-size: 3rem;
     margin-left: 0rem;
  }
-.rp-page .header .img-fluid{
+
+ .rp-page .header img{
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    overflow: hidden;
     position: absolute;
-    top: 9rem;
-    max-width: 150%;
+    top: 5rem;
     left: 0rem;
     z-index: -1;
  }
-
-
-.rp-page .heading{
-    margin-bottom: 0rem;
-    }
 
 .rp-page .d-flex{
     padding: 10% 8%;
@@ -976,10 +974,13 @@ font-size: 1.8rem;}
     margin-bottom: 5rem;
  }
 
- .rp-page .header .img-fluid{
-    top: 0rem;
-    max-width: 100%;
+.rp-page .header .heading{
+    font-size: 6vmax;
+}
 
+ .rp-page .header img{
+    top: 0rem;
+    height: auto;
  }
 
 .rp-page .img-responsive{
@@ -1098,10 +1099,9 @@ padding: 5% 15%;
         margin-bottom: 0rem;
      }
       
-     .rp-page .header .img-fluid{
+     .rp-page .header img{
         top: 5rem;
-        max-width: 150%;
-
+        height: auto;
       }
        
      #sponsors .heading{
