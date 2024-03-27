@@ -718,13 +718,13 @@ font-weight: bold;
 }
 
 .rp-page .header .heading{
-
+    
     margin-left: 0rem;
  }
 .rp-page .header .img-fluid{
     position: absolute;
-    top: 8rem;
-    width: 200%;
+    top: 9rem;
+    max-width: 150%;
     left: 0rem;
     z-index: -1;
  }
@@ -978,6 +978,8 @@ font-size: 1.8rem;}
 
  .rp-page .header .img-fluid{
     top: 0rem;
+    max-width: 100%;
+
  }
 
 .rp-page .img-responsive{
@@ -1097,7 +1099,9 @@ padding: 5% 15%;
      }
       
      .rp-page .header .img-fluid{
-         top: 5rem;
+        top: 5rem;
+        max-width: 150%;
+
       }
        
      #sponsors .heading{
