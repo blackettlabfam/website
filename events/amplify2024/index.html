@@ -34,50 +34,13 @@
 </head>
 
 <body>
-  <section>
-    <nav id="navbar" class="navbar sticky navbar-expand-lg navbar-dark">
-      <a href="../parent/index.html"><img class="navbar-brand" src="../parent/images/logo_white.png" alt="Brand Logo"></a>
-      <button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="../parent/index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../parent/index.html#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../parent/index.html#mission">Mission</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../parent/index.html#gallery">Gallery</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Events</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="../rp2025/index.html">Representing Physics 2025</a>
-              <a class="dropdown-item" href="../past-events.html">Past Events</a>
-
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../parent/index.html#cta">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://twitter.com/blackettlabfam" class="nav-link nav-icon" target="_blank"><i class="fab fa-twitter"></i> </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://www.instagram.com/blackettlabfam/" class="nav-link nav-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-          </li>
-        </ul>
-        <form target="_blank" action="https://donate.stripe.com/5kA8zKbnHb6O22c6ot">
-          <button class="donate-btn btn btn-dark black-btn" type="submit">Donate</button>
-        </form>
-      </div>
-    </nav>
-  </section>
+  <section id="get-navbar">
+    <script>
+        fetch("../parent/navbar.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("get-navbar").innerHTML = data);
+    </script>     
+</section>
 
   <section class="rp-page">
       <div class="header header-amplify">
@@ -217,14 +180,12 @@
 
   </section>
 
-  <section id="footer">
-    <div class="footer" id="footer">
-      <a href="https://twitter.com/blackettlabfam" target="_blank"><i class="footer-icon fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/blackettlabfam/" target="_blank"><i class="footer-icon fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/company/blackettlabfam" target="_blank"><i class="footer-icon fab fa-linkedin"></i></a>
-      <p class="text">© Copyright 2020 The Blackett Lab Family CIC</p>
-      <p class="text"> All Rights Reserved. <br><u><a class="hyperlink" href="../parent/files/Privacy Policy.pdf">Privacy Policy.</a></u> </p>
-    </div>
+  <section id="get-footer">
+    <script>
+        fetch("../parent/footer.html")
+            .then(response => response.text())
+            .then(data => document.getElementById("get-footer").innerHTML = data);
+    </script> 
   </section>
 
   <script src="../parent/third-party/aos-2.3.1/aos.js"></script>
