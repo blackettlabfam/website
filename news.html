@@ -11,7 +11,7 @@
 
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="third-party/bootstrap-4.5.3/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles_16.css">
+    <link rel="stylesheet" href="css/styles_17.css">
 
     <!-- Google Fonts -->
     <link href="third-party/google-fonts/open-sans/latin.css" rel="stylesheet">
@@ -49,9 +49,13 @@
                 News <hr>
             </h1>
 
-            Coming soon.
+            <p class="subtext"> Keep up with our latest activities!</p>
+            <div class="row" id="blog-cards">
+                <!-- Blog post cards will be loaded here -->
+            </div>
 
-        </div></div>
+        </div>
+        </div>
     </section>
 
     <section id="get-footer">
@@ -61,4 +65,7 @@
                 .then(data => document.getElementById("get-footer").innerHTML = data);
         </script> 
     </section>
+
+    <script src="js/news.js"></script>
+
 </body>

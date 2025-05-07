@@ -28,6 +28,31 @@ h4, h5, h6, p{
     padding-bottom: 1.3rem;
 }
 
+.card-text{
+    font-size: 1rem;
+}
+
+.card-heading{
+    font-size: 1.1rem;
+}
+
+.card-img-top{
+    object-fit: cover;
+    max-height: 7rem;
+}
+
+
+.news-readmore-btn.btn-outline-dark{
+    color: black;
+
+}
+
+.news-readmore-btn:hover{
+    background-color: white;
+    border-color: #FF6700;
+
+}
+
 .orange-text{
     color: #FF6700;
 }
@@ -36,6 +61,60 @@ h4, h5, h6, p{
     color: gray;
 }
 
+/* For posts */
+
+.article-div {
+font-size: 1.1rem;
+line-height: 1.8;
+padding-bottom: 1rem;
+margin-bottom: 1.5em;
+}
+
+.article-div p {
+text-align: justify;
+}
+
+.quote-block {
+margin-bottom: 3rem;
+border-left: 3px solid #ccc;
+font-style: italic;
+color: #444;
+}
+
+.quote-block p {
+padding-left: 1rem;
+}
+
+.angled-image {
+    margin-bottom: 2rem;
+}
+
+/* Tablet + web */
+@media (min-width: 1200px) {
+.article-div {
+    padding-right: 5%
+}
+
+.angled-image {
+    margin-bottom: 5rem;
+}
+
+.angled-image.angle-right img{
+    transform: rotate(5deg);
+  }
+
+  .angled-image img{
+    transform: rotate(-5deg);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+  
+  .angled-image img:hover {
+    transform: rotate(0deg);
+  }
+
+ 
+}
 
 /* Layout styling */
 
