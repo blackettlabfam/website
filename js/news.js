@@ -1,7 +1,7 @@
 // js/news.js
 
 document.addEventListener("DOMContentLoaded", function () {
-    fetch('posts.json')
+    fetch('../news/posts.json')
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('blog-cards');
