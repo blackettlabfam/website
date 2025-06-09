@@ -359,8 +359,11 @@ hr{
     border: none;
 }
 
-.btn:hover{
+.btn {
+    &:not(.disable):hover
+    {
     color: #FF6700;
+    }
 }
 
 .btn-dark{
@@ -368,8 +371,10 @@ hr{
     border: solid 1pt;
 }
 
-.btn-dark:hover{
+.btn-dark {
+    &:not(.disable):hover{
     background-color: white;
+}
 }
 
 .black-btn{
