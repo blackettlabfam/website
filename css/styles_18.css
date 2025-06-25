@@ -17,6 +17,17 @@ img{
     max-width: 100%;
 }
 
+.responsive-img {
+    width: 100%;
+  }
+
+@media (min-width: 992px) { /* lg breakpoint */
+.responsive-img {
+    width: 80%; /* or whatever smaller size you want on lg+ screens */
+    align-items: center
+    ;}
+}
+
 h4, h5, h6, p{
     font-weight: 600;
     font-size: 1rem;
@@ -803,13 +814,16 @@ font-weight: bold;
 }
 
 
-
 .rp-page .header .heading{
     font-size: 3rem;
     margin-left: 0rem;
  }
 
 
+ .rp-page .p{
+    text-align: justify;
+    
+ }
  .rp-page .header img{
     height: 50%;
     width: 100%;
@@ -825,10 +839,11 @@ font-weight: bold;
     object-fit: contain;
     top: 0;
     padding: 0;
+    position: relative;
  }
 
 .rp-page .d-flex{
-    padding: 10% 8%;
+    padding: 5% 8%;
     }
 
 
@@ -1069,6 +1084,8 @@ font-size: 1.8rem;}
     margin-bottom: 5rem;
  }
 
+
+
 .rp-page .header .heading{
     font-size: 6vmax;
 }
@@ -1087,10 +1104,6 @@ margin-bottom: 0%;
     margin-bottom: 5%;
 }
 
-
-.rp-page .d-flex{
-padding: 5% 15%;
-}
 
 .rp-page .img-div{
    padding-bottom: 5%;
@@ -1203,11 +1216,21 @@ padding: 5% 15%;
     .rp-page .header-amplify img{
         top: 0
       }
-   
+
      #sponsors .heading{
         font-size: 3rem;
     }
     
+}
+
+ /* Web Only */
+
+
+ @media (min-width: 1200px) {
+    .rp-page .d-flex{
+        padding: 2% 25%;
+        }
+
 }
 
 /* Timeline for Representing Physics */
