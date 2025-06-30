@@ -835,6 +835,10 @@ font-weight: bold;
     z-index: -1;
  }
 
+.rp-page .header.header-amplify{
+    margin-left: 0;
+}
+
  .rp-page .header-amplify img{
     object-fit: contain;
     top: 0;
@@ -1079,12 +1083,9 @@ font-size: 1rem;}
 font-size: 1.8rem;}
 
 .rp-page .header{
-    padding-top: 15rem;
     margin-left: 5rem;
     margin-bottom: 5rem;
  }
-
-
 
 .rp-page .header .heading{
     font-size: 6vmax;
@@ -1176,7 +1177,7 @@ margin-bottom: 0%;
 
     }
 
-        .nav-item{
+    .nav-item{
         margin-left: 1rem;
     }
 
@@ -1230,6 +1231,11 @@ margin-bottom: 0%;
     .rp-page .d-flex{
         padding: 2% 25%;
         }
+
+    .rp-page .header.header-amplify{
+        padding-top: 15%;
+        }
+        
 
 }
 
@@ -1314,13 +1320,4 @@ margin-bottom: 0%;
         left: -31.8px;
     }
 }
-
-
-.rp-page .header-amplify{
-    position: relative;
-    top: 12rem;
-    margin-left: 0;
-    padding-bottom: 240px;
-    }
-    
      
