@@ -817,6 +817,7 @@ font-weight: bold;
 .rp-page .header .heading{
     font-size: 3rem;
     margin-left: 0rem;
+    margin-top: 5rem;
  }
 
 
@@ -825,7 +826,7 @@ font-weight: bold;
     
  }
  .rp-page .header img{
-    height: 50%;
+    height: 100%;
     width: 100%;
     object-fit: cover;
     overflow: hidden;
@@ -1084,7 +1085,6 @@ font-size: 1.8rem;}
 
 .rp-page .header{
     margin-left: 5rem;
-    margin-bottom: 5rem;
  }
 
 .rp-page .header .heading{
